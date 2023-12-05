@@ -30,7 +30,7 @@
 
 
 <div class="main-content">
-    <!-- The rest of your page content goes here -->
+    <!-- The rest of your page content goes here. Write code here!-->
     <!-- ... -->
 </div>
 
