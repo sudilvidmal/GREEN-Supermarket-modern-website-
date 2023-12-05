@@ -4,7 +4,6 @@
     margin-left: -5%;
     margin-top: 5%;
     object-fit: fill;
-
 }
 
 .product-list a{
@@ -12,25 +11,24 @@
     text-decoration: none;
 }
 
-.social-icons {
-    margin-top: 13%;
+.product-list a:focus, a:hover {
+    color: #C6F932;
 }
-.social-icons a{
-    padding: 1%;
-    color: #109E28;
+
+.ft-description {
+    margin-top: 5%;
+    margin-bottom: 5%;
 }
-.social-icons a:hover{
-    opacity: 0.5;
-}
+
 footer {
-    position : absolute;
+    position : relative;
     bottom : 0;
     width: 100%;
     display: grid;
 }
 
-.input-group-append button:hover{
-    opacity: 0.5;
+.input-group-append button:hover, button:focus{
+    color: #C6F932;
 }
 .input-group-append button{
     margin-left: 4%;
@@ -42,4 +40,19 @@ footer {
 
 .abt-us a{
     margin-top: 10%;
+    color: white;
+}
+
+.abt-us a:focus, a:hover {
+    color: #C6F932;
+}
+
+input[type="text"]:focus{
+    border-color: #C6F932;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+input[type="button"]{
+    border-color: #C6F932;
+    box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
 }

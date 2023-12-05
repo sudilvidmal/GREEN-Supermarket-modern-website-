@@ -8,8 +8,8 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>footer</title>
 
+    <title>footer</title>
 
 </head>
 <body>
@@ -21,15 +21,15 @@
             <div class="col-sm pt-2 log">
                 <a href=""><img src="assets/logowhite.png" class="imglogo2"
                                 alt="logo"></a>
-                <div class="social-icons">
-                    <a href="#"><i class="fab fa-facebook-f fa-2x"></i></a>
-                    <a href="#"><i class="fab fa-twitter fa-2x"></i></a>
-                    <a href="#"><i class="fab fa-instagram fa-2x"></i></a>
+                <div class="ft-description">
+                    <p class="me-">Your eco-friendly haven for fresh, organic produce.
+                        Embracing a healthier, sustainable lifestyle.
+                    </p>
                 </div>
                 <div class="row-2">
                     <div class="abt-us mt-4">
-                        <a href="" class="p-1" style="text-decoration: none; color: white">About Us</a>
-                        <a href="" class="p-1" style="text-decoration: none; color: white">Contact Us</a>
+                        <a href="" class="p-1">About Us</a>
+                        <a href="" class="p-1">Contact Us</a>
                     </div>
                 </div>
 
@@ -50,7 +50,7 @@
             <!-- Column 3 - Contact Us Form -->
             <div class="col-sm mt-3">
                 <h4 class="mb-3">Email</h4>
-                <p>Subscribe to our mail system and get the latest updates at your fingertips</p>
+                <p>Subscribe to our mail system and get the latest updates at your fingertips!</p>
                 <div class="input-group mb-3">
                     <input type="text" class="form-control" placeholder="Email">
                     <div class="input-group-append">

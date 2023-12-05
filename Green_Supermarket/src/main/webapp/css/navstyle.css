@@ -64,7 +64,7 @@ ol, ul {
 .header__top__right {
     text-align: right;
     padding: 10px 0 13px;
-    font-weight: bold;
+    font-weight: normal;
 }
 a {
     text-decoration: none;
@@ -181,3 +181,20 @@ a {
     outline: none;
     box-shadow: none;
 }
+
+.navbar {
+    position: relative;
+    transition: top 0.3s ease-in-out;
+}
+
+.navbar.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.main-content {
+    padding-top: 20px;
+}
+

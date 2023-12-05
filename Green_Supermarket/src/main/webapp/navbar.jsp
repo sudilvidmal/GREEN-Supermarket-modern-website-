@@ -8,9 +8,14 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-
     <title>navbar</title>
 
+    <script>
+        window.addEventListener("scroll", function () {
+            var navbar = document.querySelector(".navbar");
+            navbar.classList.toggle("fixed", window.scrollY > 0);
+        });
+    </script>
 
 </head>
 
@@ -31,7 +36,7 @@
             <div class="col-4">
                 <div class="header__top__right ">
                     <div class="header__top__right__auth">
-                        <a href="#"><i class="fa fa-user"></i> Login</a>
+                        <a href="#"><i class="fa fa-user"></i> Login | Register</a>
                     </div>
                 </div>
             </div>
@@ -77,8 +82,21 @@
         </div>
     </div>
 </nav>
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        var navbar = document.querySelector(".navbar");
 
-
+        window.addEventListener("scroll", function () {
+            if (window.scrollY > navbar.offsetTop) {
+                navbar.classList.add("fixed-navbar");
+                document.body.classList.add("body-fixed-navbar");
+            } else {
+                navbar.classList.remove("fixed-navbar");
+                document.body.classList.remove("body-fixed-navbar");
+            }
+        });
+    });
+</script>
 </body>
 
 </html>
