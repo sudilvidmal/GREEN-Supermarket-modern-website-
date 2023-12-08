@@ -10,14 +10,14 @@
 <head>
 
     <title>footer</title>
-
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
 </head>
 <body>
 <footer class="text-white text-center text-lg-start bg-dark">
     <div class="container p-4">
         <div class="row">
 
-            <!-- Column 1 - Logo and Social Icons -->
+
             <div class="col-sm pt-2 log">
                 <a href=""><img src="assets/logowhite.png" class="imglogo2"
                                 alt="logo"></a>
@@ -36,7 +36,7 @@
 
             </div>
 
-            <!-- Column 2 - Products -->
+
             <div class="col-sm mt-3">
                 <h4 class="mb-3">Products</h4>
                 <div class="product-list">
@@ -47,7 +47,7 @@
                 </div>
             </div>
 
-            <!-- Column 3 - Contact Us Form -->
+
             <div class="col-sm mt-3">
                 <h4 class="mb-3">Email</h4>
                 <p>Subscribe to our mail system and get the latest updates at your fingertips!</p>
@@ -62,7 +62,7 @@
         </div>
         <hr>
         <div class="row">
-            <div class="col-6 leftdiv">@copyright lollipop</div>
+            <div class="col-6 leftdiv">&copy; 2023 Green Supermarket. All rights reserved. | Designed and developed by lollipops. </div>
             <div class="col-6 rightdiv"><img
                     src="https://www.paypalobjects.com/webstatic/mktg/logo/pp_cc_mark_37x23.jpg" alt="PayPal Logo"/>
             </div>

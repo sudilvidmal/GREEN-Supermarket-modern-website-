@@ -47,7 +47,7 @@ footer {
     color: #C6F932;
 }
 
-input[type="text"]:focus{
+.input-group input[type="text"]:focus{
     border-color: #C6F932;
     box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
 }

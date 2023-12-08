@@ -1,0 +1,50 @@
+.item-container1 {
+    display: flex;
+    justify-content: center;
+    color: #000;
+    font-weight: bold;
+    font-size: 1rem;
+    text-align: left;
+    letter-spacing: .01rem;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.item1 {
+    padding: 2.5rem;
+}
+
+.fa-check-circle:before {
+    content: "\f058";
+}
+
+.item1 i {
+    color: #109E28;
+    padding-right: .625rem;
+    padding-top: .2188rem;
+}
+
+.far {
+    font-family: 'font awesome 5 free';
+    font-weight: 400;
+}
+
+.fa, .fas, .far, .fal, .fad, .fab {
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    line-height: 1;
+}
+
+@media only screen and (max-width: 600px) {
+    .item-container1 {
+        justify-content: flex-start;
+    }
+}
+
+.carousel-control-next{
+    color: #109E28;
+}
