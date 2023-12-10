@@ -10,9 +10,7 @@
 <head>
     <title>navbar</title>
     <link rel="stylesheet" type="text/css" href="css/navstyle.css">
-
 </head>
-
 <body>
 
 <nav class="navbar navbar-expand-lg bg-light shadow fixed-top" aria-label="Tenth navbar example">
@@ -43,7 +41,6 @@
 
                     <a class="nav-link" href="#mailModal" data-bs-toggle="modal" data-bs-target="#mailModal">Search <i
                             class="fa-solid fa-magnifying-glass"></i></a>
-
                 </li>
             </ul>
 
@@ -61,7 +58,6 @@
         </div>
     </div>
 </nav>
-
 
 <div class="modal fade" tabindex="-1" role="dialog" id="mailModal">
     <div class="modal-dialog modal-dialog-centered" role="document">
