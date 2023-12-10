@@ -201,11 +201,11 @@
             </div></a>
         </div>
 
-        <div class="col-sm-12 col-md-12 col-lg-4 ">
+        <div class="col-sm-12 col-md-12 col-lg-4 "  >
             <div class="row mb-2 g-2 smalltile-row" >
                 <div class="col-6">
                     <a href="index.jsp"> <div class="card text-white card3">
-                        <img src="images/snacks.webp" class="card-img" alt="img" >
+                        <img src="images/snacks.webp" class="card-img" alt="img" style="height: 250px">
                         <div class="card-img-overlay">
                             <h5 class="card-title">SNACKS</h5>
                         </div>
@@ -213,7 +213,7 @@
                 </div>
                 <div class="col-6">
                     <a href="index.jsp"> <div class="card text-white card4">
-                        <img src="images/snacks.webp" class="card-img" alt="img" >
+                        <img src="images/snacks.webp" class="card-img" alt="img" style="height: 250px">
                         <div class="card-img-overlay">
                             <h5 class="card-title">SNACKS</h5>
                         </div>
@@ -223,9 +223,9 @@
             </div>
 
             <div class="row smalltile-row g-2" >
-                <div class="col-6">
+                <div class="col-6" >
                     <a href="index.jsp"> <div class="card text-white card5">
-                        <img src="images/snacks.webp" class="card-img" alt="img" >
+                        <img src="images/snacks.webp" class="card-img" alt="img"style="height: 250px" >
                         <div class="card-img-overlay">
                             <h5 class="card-title">SNACKS</h5>
                         </div>
@@ -233,7 +233,7 @@
                 </div>
                 <div class="col-6">
                     <a href="index.jsp"> <div class="card text-white card6">
-                        <img src="images/snacks.webp" class="card-img" alt="img" >
+                        <img src="images/snacks.webp" class="card-img" alt="img"style="height: 250px">
                         <div class="card-img-overlay">
                             <h5 class="card-title">SNACKS</h5>
                         </div>
@@ -261,6 +261,6 @@
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
 
-
+<%--style="height: 320px"--%>
 </body>
 </html>
