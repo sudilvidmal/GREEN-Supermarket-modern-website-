@@ -164,6 +164,8 @@
     </div>
 </main>
 
+<jsp:include page="feedback.jsp"/>
+
 <jsp:include page="footer.jsp"/>
 
 <script src="js/main.js"></script>
