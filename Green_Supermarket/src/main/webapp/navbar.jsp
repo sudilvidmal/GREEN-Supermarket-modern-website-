@@ -56,12 +56,12 @@
             </div>
 
             <div class="loginbtn">
-                <button class="glow-on-hover" type="button">Sign up</button>
+                <div> <jsp:include page="modalreglog.jsp"/> </div>
+                <button class="glow-on-hover" data-bs-toggle="modal" data-bs-target="#staticBackdropLogReg" type="button">Sign up</button>
             </div>
         </div>
     </div>
 </nav>
-
 
 <div class="modal fade" tabindex="-1" role="dialog" id="mailModal">
     <div class="modal-dialog modal-dialog-centered" role="document">
