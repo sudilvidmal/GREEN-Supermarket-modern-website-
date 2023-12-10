@@ -34,7 +34,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Shop All</a>
+                    <a class="nav-link" href="allproduct.jsp">Shop All</a>
                 </li>
 
                 <li class="nav-item">
