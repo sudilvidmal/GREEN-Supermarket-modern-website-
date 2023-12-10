@@ -13,8 +13,12 @@ html {
 
 .btn-success {
     background-color: #ffc107;
-    border-color: #c0aa83;
+    border-color: black;
     color: #fff;
+    border-width: 0;
+}
+.btn-success:focus{
+    background-color: black !important;
 }
 
 .btn-success:hover {
@@ -95,7 +99,7 @@ html {
 .blog-sidebar-list {
     color: #242424;
     font-size: 16px;
-    font-weight: 600;
+
 }
 
 .blog-sidebar-text {
@@ -164,7 +168,7 @@ html {
 
 .button-text {
     font-size: 14px;
-    font-weight: 900;
+    font-weight: 500;
 }
 
 .product-image {
