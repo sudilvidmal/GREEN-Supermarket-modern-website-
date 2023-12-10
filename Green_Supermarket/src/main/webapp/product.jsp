@@ -175,7 +175,7 @@
     </div>
 
 </div>
-
+<jsp:include page="feedback.jsp"/>
 
 <jsp:include page="footer.jsp"/>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.js"
