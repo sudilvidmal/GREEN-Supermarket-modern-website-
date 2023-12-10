@@ -64,37 +64,6 @@ html {
 }
 
 
-.btn-light,
-.btn-dark {
-    font-size: 16px;
-    font-weight: 900;
-}
-
-.btn-light {
-    background-color: #c0aa83;
-    border-color: #c0aa83;
-    color: #fff;
-}
-
-.btn-light:hover {
-    background-color: #fff;
-    border-color: #c0aa83;
-    color: #c0aa83;
-}
-
-.btn-dark {
-    background-color: #242424;
-    border-color: #242424;
-    color: #fff;
-}
-
-.btn-dark:hover {
-    background-color: #fff;
-    border-color: #242424;
-    color: #242424;
-}
-
-
 .blog-sidebar-title,
 .blog-sidebar-list {
     color: #242424;
