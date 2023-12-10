@@ -1,6 +1,6 @@
 
 .text-bold {
-    font-weight: 800;
+    font-weight: 700;
 }
 
 text-color {
@@ -44,6 +44,7 @@ text-color {
 
 .buttons .block {
     margin-right: 5px;
+
 }
 
 .quantity input {
@@ -63,7 +64,7 @@ text-color {
 }
 
 .custom-btn:hover {
-    background-color: #0093c4 !important;
+    background-color: black!important;
     font-size: 18px;
     color: white !important;
 }
