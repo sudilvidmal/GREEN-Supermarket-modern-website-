@@ -69,8 +69,10 @@
                                     <img src="images/latest-product/6.webp" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
                                         <h5 class="card-title">Avocado</h5>
-                                        <p class="card-text">Creamy and nutritious, our ripe avocados are perfect for salads, spreads, or a healthy snack.</p>
-                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i> Add to cart</a>
+                                        <p class="card-text">Creamy and nutritious, our ripe avocados are perfect for
+                                            salads, spreads, or a healthy snack.</p>
+                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i>
+                                            Add to cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -80,8 +82,10 @@
                                     <img src="images/latest-product/8.webp" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
                                         <h5 class="card-title">Dark Chocolate Bars</h5>
-                                        <p class="card-text">Fair-trade sourced for guilt-free satisfaction with every heavenly bite.</p>
-                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i> Add to cart</a>
+                                        <p class="card-text">Fair-trade sourced for guilt-free satisfaction with every
+                                            heavenly bite.</p>
+                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i>
+                                            Add to cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -91,8 +95,10 @@
                                     <img src="images/latest-product/4.webp" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
                                         <h5 class="card-title">Vibrant Olives</h5>
-                                        <p class="card-text">Savor the taste of our plump, brine-cured olives. Perfect for salads or appetizers.</p>
-                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i> Add to cart</a>
+                                        <p class="card-text">Savor the taste of our plump, brine-cured olives. Perfect
+                                            for salads or appetizers.</p>
+                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i>
+                                            Add to cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -102,8 +108,10 @@
                                     <img src="images/latest-product/2.webp" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
                                         <h5 class="card-title">Extra Virgin Olive Oil</h5>
-                                        <p class="card-text">Premium, cold-pressed olive oil—crafted for its rich flavor and health benefits.</p>
-                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i> Add to cart</a>
+                                        <p class="card-text">Premium, cold-pressed olive oil—crafted for its rich flavor
+                                            and health benefits.</p>
+                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i>
+                                            Add to cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -118,8 +126,10 @@
                                     <img src="images/latest-product/1.webp" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
                                         <h5 class="card-title">Whole Grain Bread</h5>
-                                        <p class="card-text">Satisfy your cravings with our hearty whole-grain bread - Perfect slice every time.</p>
-                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i> Add to cart</a>
+                                        <p class="card-text">Satisfy your cravings with our hearty whole-grain bread -
+                                            Perfect slice every time.</p>
+                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i>
+                                            Add to cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -129,8 +139,10 @@
                                     <img src="images/latest-product/5.webp" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
                                         <h5 class="card-title">Free-Range Eggs</h5>
-                                        <p class="card-text">Enjoy the rich, golden yolks of our free-range eggs—sourced from local farms .</p>
-                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i> Add to cart</a>
+                                        <p class="card-text">Enjoy the rich, golden yolks of our free-range eggs—sourced
+                                            from local farms .</p>
+                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i>
+                                            Add to cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -140,8 +152,10 @@
                                     <img src="images/latest-product/7.webp" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
                                         <h5 class="card-title">Organic Yogurt</h5>
-                                        <p class="card-text">Indulge in the velvety texture of our organic yogurt—perfect for breakfast or snacks.</p>
-                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i> Add to cart</a>
+                                        <p class="card-text">Indulge in the velvety texture of our organic
+                                            yogurt—perfect for breakfast or snacks.</p>
+                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i>
+                                            Add to cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -151,8 +165,10 @@
                                     <img src="images/latest-product/3.webp" class="card-img-top" alt="...">
                                     <div class="card-body text-center">
                                         <h5 class="card-title">Arabica Coffee Beans</h5>
-                                        <p class="card-text">Awaken your senses with our premium Arabica coffee beans—sourced and expertly roasted.</p>
-                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i> Add to cart</a>
+                                        <p class="card-text">Awaken your senses with our premium Arabica coffee
+                                            beans—sourced and expertly roasted.</p>
+                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i>
+                                            Add to cart</a>
                                     </div>
                                 </div>
                             </div>
@@ -163,8 +179,77 @@
         </div>
     </div>
 </main>
+<div class="container-fluid pb-2 pt-5 " >
+
+
+    <div class="row  g-2 mx-auto">
+
+        <div class=" col-sm-12 col-md-12 col-lg-4 pb-2">
+            <a href="index.jsp"> <div class="card text-white card1">
+                 <img src="images/snacks.webp" class="card-img" alt="img" style="width: auto; height: 509px">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">SNACKS</h5>
+                </div>
+            </div></a>
+        </div>
+        <div class="col-sm-12 col-md-12 col-lg-4 pb-2">
+            <a href="index.jsp"> <div class="card text-white card2">
+                <img src="images/snacks.webp" class="card-img" alt="img" style="width: auto; height: 509px">
+                <div class="card-img-overlay">
+                    <h5 class="card-title">SNACKS</h5>
+                </div>
+            </div></a>
+        </div>
+
+        <div class="col-sm-12 col-md-12 col-lg-4 ">
+            <div class="row mb-2 g-2 smalltile-row" >
+                <div class="col-6">
+                    <a href="index.jsp"> <div class="card text-white card3">
+                        <img src="images/snacks.webp" class="card-img" alt="img" >
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">SNACKS</h5>
+                        </div>
+                    </div></a>
+                </div>
+                <div class="col-6">
+                    <a href="index.jsp"> <div class="card text-white card4">
+                        <img src="images/snacks.webp" class="card-img" alt="img" >
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">SNACKS</h5>
+                        </div>
+                    </div></a>
+                </div>
+
+            </div>
+
+            <div class="row smalltile-row g-2" >
+                <div class="col-6">
+                    <a href="index.jsp"> <div class="card text-white card5">
+                        <img src="images/snacks.webp" class="card-img" alt="img" >
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">SNACKS</h5>
+                        </div>
+                    </div></a>
+                </div>
+                <div class="col-6">
+                    <a href="index.jsp"> <div class="card text-white card6">
+                        <img src="images/snacks.webp" class="card-img" alt="img" >
+                        <div class="card-img-overlay">
+                            <h5 class="card-title">SNACKS</h5>
+                        </div>
+                    </div></a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+<jsp:include page="feedback.jsp"/>
 
 <jsp:include page="footer.jsp"/>
+
 
 <script src="js/main.js"></script>
 
@@ -175,5 +260,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+
+
 </body>
 </html>
