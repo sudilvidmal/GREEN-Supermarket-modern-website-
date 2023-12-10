@@ -27,9 +27,7 @@ footer {
     display: grid;
 }
 
-.input-group-append button:hover, button:focus{
-    color: #C6F932;
-}
+
 .input-group-append button{
     margin-left: 4%;
 }
