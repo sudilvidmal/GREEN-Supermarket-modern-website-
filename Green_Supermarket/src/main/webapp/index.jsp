@@ -246,6 +246,8 @@
 </div>
 
 
+<jsp:include page="feedback.jsp"/>
+
 <jsp:include page="footer.jsp"/>
 
 
