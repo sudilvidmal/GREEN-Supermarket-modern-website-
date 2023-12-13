@@ -1,22 +1,37 @@
 
+.modal-backdrop.show {
+    z-index: 0 !important;
+}
 .title{
     margin-bottom: 5vh;
 }
-.wishlistcard {
+.cartcard {
+    margin: auto;
+    max-width: 950px;
+    width: 90%;
+    box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border-radius: 1rem;
 
 
 
-    .wcart {
+    @media (max-width: 992px) {
+        .cartcard {
+            margin: 3vh auto;
+        }
+    }
+
+    .cart {
         background-color: #fff;
         padding: 4vh 5vh;
-       border-radius:1rem;
+        border-bottom-left-radius: 1rem;
+        border-top-left-radius: 1rem;
     }
 
     @media (max-width: 992px) {
-        .wcart {
+        .cart {
             padding: 4vh;
-            border-radius:1rem;
-
+            border-bottom-left-radius: unset;
+            border-top-right-radius: 1rem;
         }
     }
 
@@ -59,6 +74,7 @@
 
     .col-2, .col {
         padding: 0 1vh;
+        text-align: right;
     }
 
     a {
@@ -108,14 +124,39 @@
         color: transparent;
     }
 
+    .checkoutbtn{
+        background-color: #000;
+        border-color: #000;
+        color: white;
 
+        font-size: 0.7rem;
+        margin-top: 4vh;
+        padding: 1vh;
+        border-radius: 10px;
+    }
 
+    .checkoutbtn:focus {
+        box-shadow: none;
+        outline: none;
+        box-shadow: none;
+        color: white;
+        -webkit-box-shadow: none;
+        -webkit-user-select: none;
+        transition: none;
+    }
+
+    .checkoutbtn:hover {
+        color: white;
+    }
 
     a {
         color: black;
     }
 
-
+    a:hover {
+        color: black;
+        text-decoration: none;
+    }
 
     @media (min-width: 992px)
     .col-lg-8 {
@@ -123,8 +164,9 @@
         width: 66.66666667%;
     }
     @media (min-width: 992px)
-    .col-lg-12 {
+    .col-lg-4 {
         flex: 0 0 auto;
         width: 33.33333333%;
     }
+
 }
