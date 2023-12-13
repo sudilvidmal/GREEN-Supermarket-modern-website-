@@ -28,8 +28,8 @@
                 </div>
                 <div class="row-2">
                     <div class="abt-us mt-4">
-                        <a href="" class="p-1">About Us</a>
-                        <a href="" class="p-1">Contact Us</a>
+                        <a href="aboutus.jsp" class="p-1">About Us</a>
+                        <a href="contactus.jsp" class="p-1">Contact Us</a>
                     </div>
                 </div>
 
