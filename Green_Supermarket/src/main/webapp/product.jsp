@@ -125,7 +125,7 @@
 
         <div class="row">
             <div class="col-sm-3 col-md-6 col-lg-4">
-                <div class="card">
+                <div class="card mt-3">
                     <div class="card-body text-center">
                         <a href="product.jsp"><img
                                 src="https://images.unsplash.com/photo-1633674432402-2f0c8ba69d72?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjM5fHx2ZWdldGFibGVzfGVufDB8fDB8fHww"
@@ -141,7 +141,7 @@
             </div>
 
             <div class="col-sm-3 col-md-6 col-lg-4">
-                <div class="card">
+                <div class="card mt-3">
                     <div class="card-body text-center">
                         <a href="product.jsp"> <img
                                 src="https://images.unsplash.com/photo-1533321942807-08e4008b2025?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dmVnZXRhYmxlc3xlbnwwfHwwfHx8MA%3D%3D"
@@ -156,7 +156,7 @@
             </div>
 
             <div class="col-sm-3 col-md-6 col-lg-4">
-                <div class="card">
+                <div class="card mt-3">
                     <div class="card-body text-center">
                         <a href="product.jsp"> <img
                                 src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fHZlZ2V0YWJsZXN8ZW58MHx8MHx8fDA%3D"

@@ -17,7 +17,7 @@
 
     <div class="container">
 
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="index.jsp">
             <img src="assets/logogreen.png" alt="" width="220" height="35">
         </a>
 
@@ -30,7 +30,7 @@
             <ul class="navbar-nav mx-auto ">
 
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="#">Home</a>
+                    <a class="nav-link" aria-current="page" href="index.jsp">Home</a>
                 </li>
 
                 <li class="nav-item">

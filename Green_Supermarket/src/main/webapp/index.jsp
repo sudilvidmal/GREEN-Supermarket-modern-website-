@@ -183,9 +183,8 @@
 
 
     <div class="row  g-2 mx-auto">
-
         <div class=" col-sm-12 col-md-12 col-lg-4 pb-2">
-            <a href="index.jsp"> <div class="card text-white card1">
+            <a href="index.jsp"> <div class="card text-white card1 img-fluid ">
                  <img src="images/snacks.webp" class="card-img" alt="img" style="width: auto; height: 509px">
                 <div class="card-img-overlay">
                     <h5 class="card-title">SNACKS</h5>
@@ -193,7 +192,7 @@
             </div></a>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-4 pb-2">
-            <a href="index.jsp"> <div class="card text-white card2">
+            <a href="index.jsp"> <div class="card text-white card2 img-fluid">
                 <img src="images/snacks.webp" class="card-img" alt="img" style="width: auto; height: 509px">
                 <div class="card-img-overlay">
                     <h5 class="card-title">SNACKS</h5>
@@ -204,7 +203,7 @@
         <div class="col-sm-12 col-md-12 col-lg-4 "  >
             <div class="row mb-2 g-2 smalltile-row" >
                 <div class="col-6">
-                    <a href="index.jsp"> <div class="card text-white card3">
+                    <a href="index.jsp"> <div class="card text-white card3 img-fluid">
                         <img src="images/snacks.webp" class="card-img" alt="img" style="height: 250px">
                         <div class="card-img-overlay">
                             <h5 class="card-title">SNACKS</h5>
@@ -261,6 +260,5 @@
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
 
-<%--style="height: 320px"--%>
 </body>
 </html>
