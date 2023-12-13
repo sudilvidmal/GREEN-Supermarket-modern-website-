@@ -186,7 +186,7 @@
 
         <div class=" col-sm-12 col-md-12 col-lg-4 pb-2">
             <a href="index.jsp"> <div class="card text-white card1">
-                 <img src="images/snacks.webp" class="card-img" alt="img" style="width: auto; height: 509px">
+                 <img src="images/snacks.webp" class="card-img" alt="img" style="">
                 <div class="card-img-overlay">
                     <h5 class="card-title">SNACKS</h5>
                 </div>
