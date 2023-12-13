@@ -83,11 +83,11 @@
     </div>
     <div class="container faq pt-5">
         <div class="row">
-            <div class="col  pt-4">
+            <div class="col-lg">
                 <p class="ask">Frequently Asked Question</p>
 
             </div>
-            <div class="col">
+            <div class="col-lg">
                 <div class="containerfaq">
 
                     <details>
