@@ -17,7 +17,7 @@
      aria-labelledby="staticBackdropLabel" aria-hidden="true" style="backdrop-filter: blur(6px);
 
         ">
-    <div class="modal-dialog modal-xl" style="background-color: transparent; ">
+    <div class="modal-dialog modal-lg" style="background-color: transparent; ">
         <div class="modal-content" style="background-color: transparent;border: transparent;">
             <div class="modal-header" style="background-color: transparent;border: transparent">
                 <div class="modal-content" style="background-color: transparent;border: transparent;">
