@@ -30,6 +30,7 @@ footer {
 
 .input-group-append button{
     margin-left: 4%;
+    height: 38px;
 }
 
 .rightdiv{
@@ -54,3 +55,5 @@ input[type="button"]{
     border-color: #C6F932;
     box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
 }
+
+
