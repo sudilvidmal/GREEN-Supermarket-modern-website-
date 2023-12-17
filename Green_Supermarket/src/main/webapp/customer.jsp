@@ -297,33 +297,24 @@
 
 
                 <div class="table-responsive mt-5">
-                    <table class="table table-bordered">
+                    <table border="1" class="table table-hover table-bordered">
                         <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Phone</th>
+                            <th>Password</th>
+
+
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                        <tbody id="display_customer">
+                        <%-- Data from Servlet will be displayed here --%>
+                        <%
+                            // Placeholder for data retrieved from Servlet
+                            // This will be replaced by actual data from the servlet
+                        %>
                         </tbody>
                     </table>
                 </div>
@@ -461,6 +452,21 @@
         </main>
     </div>
 </div>
+
+<script>
+    function fetchData() {
+        fetch('display_customerServlet')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('display_customer').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    window.onload = fetchData;
+</script>
 <script src="dashboardassets/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
