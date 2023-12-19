@@ -6,7 +6,12 @@ import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.*;
-
+import jakarta.servlet.annotation.WebServlet;
+import jakarta.servlet.http.HttpServlet;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+import java.io.IOException;
 
 @WebServlet("/loginservlet")
 public class LoginServlet extends HttpServlet {
@@ -18,32 +23,47 @@ public class LoginServlet extends HttpServlet {
 
         String password = request.getParameter("upassword");
 
+
+
         try {
-            Class.forName("com.mysql.jdbc.Driver");
+            Class.forName("com.mysql.cj.jdbc.Driver");
 
             Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/green_sp_db", "root", "root");
 
-            System.out.println("Connection Succeed!");
+            String query = "SELECT customer_id FROM customer_table WHERE customer_email = ? AND customer_password = ?";
+            try (PreparedStatement preparedStatement = conn.prepareStatement(query)) {
+                preparedStatement.setString(1, email);
+                preparedStatement.setString(2, password);
 
-            String Query2 = "Select * FROM customer_table WHERE customer_email = ? AND customer_password = ?";
-            PreparedStatement pre = conn.prepareStatement(Query2);
+                try (ResultSet resultSet = preparedStatement.executeQuery()) {
+                    if (resultSet.next()) {
+                        // User is authenticated, retrieve customer_id
+                        int customerId = resultSet.getInt("customer_id");
+
+                        // Create or retrieve the session
+                        HttpSession session = request.getSession();
+
+                        // Store customer_id in the session
+                        session.setAttribute("sessionuserid", customerId);
+                        session.setAttribute("userLoggedIn", true);
+                        response.getWriter().println("<script>alert('Login Successful!'); window.location.href='index.jsp';</script>");
+                        System.out.println("Login Successful");
 
 
-            pre.setString(1, email);
-            pre.setString(2, password);
 
-            pre.execute();
 
-                response.getWriter().println("<script>alert('Login Successful!'); window.location.href='index.jsp';</script>");
-            System.out.println("Login Successful");
+                    } else {
+                        // Authentication failed
+                        response.getWriter().println("<script>alert('Login Failed!'); window.location.href='login.jsp';</script>");
+                    }
+                }
+            }
 
             conn.close();
 
-        } catch (SQLException | ClassNotFoundException b) {
-            System.out.println("Wrong Username or Password");
-            b.printStackTrace();
-
+        } catch (SQLException | ClassNotFoundException e) {
+            System.out.println("Error: " + e.getMessage());
+            e.printStackTrace();
         }
-
     }
 }

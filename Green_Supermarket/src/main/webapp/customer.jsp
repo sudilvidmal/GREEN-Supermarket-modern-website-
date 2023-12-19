@@ -1,4 +1,4 @@
-<%@ page import="Servlets.CustomerDetails" %><%--
+<%--
   Created by IntelliJ IDEA.
   User: HP
   Date: 11/12/2023
@@ -313,7 +313,14 @@
                         </tbody>
                     </table>
 
+                    <ul>
+                        <li>Session ID: <%= session.getId() %></li>
+                        <li>Example Attribute: <%= session.getAttribute("sessionuserid") %></li>
 
+                    </ul>
+                    <form action="logout" method="get">
+                        <button type="submit">Logout</button>
+                    </form>
                 </div>
             </div>
 
