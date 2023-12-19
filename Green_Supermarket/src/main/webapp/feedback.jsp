@@ -12,6 +12,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Feedback Form</title>
 
+    <!-- Include SweetAlert2 from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+
     <link rel="stylesheet" type="text/css" href="css/feedbackcss.css">
 </head>
 <body>
@@ -32,21 +36,21 @@
                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <form>
+                        <form action="FeedbackServlet" method="post">
                             <div class="form-group">
                                 <label>How likely you would like to recommend us to your friends?</label>
                                 <div class="rating-input-wrapper d-flex justify-content-between mt-2">
 
-                                    <label><input type="radio" name="rating" /><span class="border rounded px-3 py-2">1</span></label>
-                                    <label><input type="radio" name="rating" /><span class="border rounded px-3 py-2">2</span></label>
-                                    <label><input type="radio" name="rating" /><span class="border rounded px-3 py-2">3</span></label>
-                                    <label><input type="radio" name="rating" /><span class="border rounded px-3 py-2">4</span></label>
-                                    <label><input type="radio" name="rating" /><span class="border rounded px-3 py-2">5</span></label>
-                                    <label><input type="radio" name="rating" /><span class="border rounded px-3 py-2">6</span></label>
-                                    <label><input type="radio" name="rating" /><span class="border rounded px-3 py-2">7</span></label>
-                                    <label><input type="radio" name="rating" /><span class="border rounded px-3 py-2">8</span></label>
-                                    <label><input type="radio" name="rating" /><span class="border rounded px-3 py-2">9</span></label>
-                                    <label><input type="radio" name="rating" /><span class="border rounded px-3 py-2">10</span></label>
+                                    <label><input type="radio" name="rating" value="1" required/><span class="border rounded px-3 py-2">1</span></label>
+                                    <label><input type="radio" name="rating" value="2" required/><span class="border rounded px-3 py-2">2</span></label>
+                                    <label><input type="radio" name="rating" value="3" required/><span class="border rounded px-3 py-2">3</span></label>
+                                    <label><input type="radio" name="rating" value="4" required/><span class="border rounded px-3 py-2">4</span></label>
+                                    <label><input type="radio" name="rating" value="5" required/><span class="border rounded px-3 py-2">5</span></label>
+                                    <label><input type="radio" name="rating" value="6" required/><span class="border rounded px-3 py-2">6</span></label>
+                                    <label><input type="radio" name="rating" value="7" required/><span class="border rounded px-3 py-2">7</span></label>
+                                    <label><input type="radio" name="rating" value="8" required/><span class="border rounded px-3 py-2">8</span></label>
+                                    <label><input type="radio" name="rating" value="9" required/><span class="border rounded px-3 py-2">9</span></label>
+                                    <label><input type="radio" name="rating" value="10" required/><span class="border rounded px-3 py-2">10</span></label>
 
                                 </div>
                                 <div class="rating-labels d-flex justify-content-between mt-3">
@@ -57,13 +61,15 @@
 
                             <div class="form-group mt-3">
                                 <label for="input-two">Would you like to say something?</label>
-                                <textarea class="form-control mt-1" id="input-two" rows="3"></textarea>
+                                <textarea class="form-control mt-1" id="input-two" rows="3" name="feedback"></textarea>
+                            </div>
+
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                <button type="submit" class="btn btn-warning">Submit</button>
                             </div>
                         </form>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-warning">Submit</button>
                     </div>
                 </div>
             </div>

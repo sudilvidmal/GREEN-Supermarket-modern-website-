@@ -200,8 +200,8 @@
             </div></a>
         </div>
 
-        <div class="col-sm-12 col-md-12 col-lg-4 "  >
-            <div class="row mb-2 g-2 smalltile-row" >
+        <div class="col-sm-12 col-md-12 col-lg-4 ">
+            <div class="row mb-2 g-2 smalltile-row">
                 <div class="col-6">
                     <a href="index.jsp"> <div class="card text-white card3 img-fluid">
                         <img src="images/snacks.webp" class="card-img" alt="img" style="height: 250px">
