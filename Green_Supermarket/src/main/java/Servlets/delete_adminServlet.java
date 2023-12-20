@@ -1,4 +1,4 @@
-package Servlets;
+package servlets;
 
 import java.io.*;
 import java.sql.Connection;
@@ -24,7 +24,7 @@ public class delete_adminServlet extends HttpServlet {
             String adminusername = request.getParameter("txtusername");
             String adminpassword = request.getParameter("txtpassword");
 
-            Connection conn = servlets.dbconnection.getConnection();
+            Connection conn = dbconnection.getConnection();
 
             String query = "DELETE FROM admin_table WHERE admin_id=? AND admin_username=? AND admin_password=?";
 

@@ -1,4 +1,4 @@
-package Servlets;
+package servlets;
 
 import java.io.*;
 import java.sql.Connection;
@@ -18,9 +18,7 @@ public class update_adminServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-        String url ="jdbc:mysql://127.0.0.1:3306/green_sp_db";
-        String username = "root";
-        String password = "siri";
+
 
         try{
             int adminid = Integer.parseInt(request.getParameter("txtid"));
@@ -31,8 +29,8 @@ public class update_adminServlet extends HttpServlet {
             String adminpassword = request.getParameter("txtpassword");
 
             //Establishing connection
-            Class.forName("com.mysql.jdbc.Driver");
-            Connection conn = DriverManager.getConnection(url,username,password);
+
+            Connection conn = dbconnection.getConnection();
             System.out.println("Connection succeed");
 
             //insert query

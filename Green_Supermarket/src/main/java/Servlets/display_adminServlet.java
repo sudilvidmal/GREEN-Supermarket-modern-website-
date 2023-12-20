@@ -1,4 +1,4 @@
-package Servlets;
+package servlets;
 
 import java.io.*;
 import java.sql.*;
@@ -17,7 +17,7 @@ public class display_adminServlet extends HttpServlet {
 
         try {
 
-            Connection conn = servlets.dbconnection.getConnection();
+            Connection conn = dbconnection.getConnection();
             Statement stmt = conn.createStatement();
             String sql = "SELECT * FROM admin_table";
             ResultSet rs = stmt.executeQuery(sql);

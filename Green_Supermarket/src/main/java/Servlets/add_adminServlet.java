@@ -1,4 +1,4 @@
-package Servlets;
+package servlets;
 
 import java.io.*;
 import java.sql.Connection;
@@ -8,7 +8,7 @@ import java.sql.PreparedStatement;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@WebServlet(name = "add_itemServlet", value = "/add_itemServlet")
+@WebServlet(name = "add_adminServlet", value = "/add_adminServlet")
 public class add_adminServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
@@ -28,7 +28,7 @@ public class add_adminServlet extends HttpServlet {
             String adminpassword = request.getParameter("txtpassword");
 
             //Establishing connection
-            Connection conn = servlets.dbconnection.getConnection();
+            Connection conn = dbconnection.getConnection();
 
             //insert query
             String qry = "INSERT INTO admin_table(admin_first_name,admin_last_name,admin_username,admin_email,admin_password) VALUES(?,?,?,?,?)";
