@@ -35,7 +35,13 @@
         <artifactId>junit-jupiter-engine</artifactId>
         <version>${junit.version}</version>
         <scope>test</scope>
-      </dependency>  </dependencies>
+      </dependency>
+      <dependency>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>7.0</version>
+      </dependency>
+  </dependencies>
 
   <build>
     <plugins>
@@ -46,3 +52,5 @@
       </plugin>    </plugins>
   </build>
 </project>
+
+        <!-- https://mvnrepository.com/artifact/jakarta.servlet/jakarta.servlet-api -->
