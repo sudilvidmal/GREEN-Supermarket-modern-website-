@@ -281,13 +281,31 @@
 
                 <h1 class="h2">Dashboard</h1>
                 <div class="row">
-                    <div class="col-6   pt-3 px-3">
+                    <div class="col-sm-3 col-md-3 col-lg-2   pt-3 px-3">
                         <div>
                             <jsp:include page="add_admin.jsp"/>
                         </div>
                         <button type="button" class="btn btn-success" data-bs-toggle="modal"
                                 data-bs-target="#add_adminmodal">
                             Add Admin
+                        </button>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-2   pt-3 px-3">
+                        <div>
+                            <jsp:include page="update_admin.jsp"/>
+                        </div>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                data-bs-target="#update_adminmodal">
+                            Update Admin
+                        </button>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-2   pt-3 px-3">
+                        <div>
+                            <jsp:include page="delete_admin.jsp"/>
+                        </div>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                data-bs-target="#delete_adminmodal">
+                            Delete Admin
                         </button>
                     </div>
                     <div class="col-6 pt-3">
@@ -302,33 +320,25 @@
 
 
                 <div class="table-responsive mt-5">
-                    <table class="table table-bordered">
+                    <table border="1" class="table table-hover table-bordered">
                         <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th>ID</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Username</th>
+                            <th>Password</th>
+
+
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                        <tbody id="display_admin">
+                        <%-- Data from Servlet will be displayed here --%>
+                        <%
+                            // Placeholder for data retrieved from Servlet
+                            // This will be replaced by actual data from the servlet
+                        %>
                         </tbody>
                     </table>
                 </div>
@@ -466,6 +476,21 @@
         </main>
     </div>
 </div>
+
+<script>
+    function fetchData() {
+        fetch('display_adminServlet')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('display_admin').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    window.onload = fetchData;
+</script>
 <script src="dashboardassets/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
