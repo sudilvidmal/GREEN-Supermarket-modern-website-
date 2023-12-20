@@ -73,161 +73,16 @@
                 </div>
 
 
-                <div class="row">
-                    <div class="col-sm-3 col-md-6 col-lg-4">
-                        <div class="card mt-3">
-                            <div class="card-body text-center">
-                                <a href="product.jsp"><img
-                                        src="https://images.unsplash.com/photo-1633674432402-2f0c8ba69d72?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjM5fHx2ZWdldGFibGVzfGVufDB8fDB8fHww"
-                                        class="product-image"></a>
-                                <h5 class="card-title"><b>Vegetable</b></h5>
-                                <p class="card-text small">Product description</p>
-                                <p class="tags">Price <span>Rs 100/=</span></p>
-                                <a href="#" target="_blank" class="btn btn-success button-text"><i
-                                        class="fa fa-shopping-cart" aria-hidden="true"></i> Add to cart</a>
-                            </div>
-                        </div>
-                    </div>
+                <div class="row" id="display_cardproduct">
 
-                    <div class="col-sm-3 col-md-6 col-lg-4">
-                        <div class="card mt-3">
-                            <div class="card-body text-center">
-                                <a href="product.jsp"> <img
-                                        src="https://images.unsplash.com/photo-1533321942807-08e4008b2025?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dmVnZXRhYmxlc3xlbnwwfHwwfHx8MA%3D%3D"
-                                        class="product-image"></a>
-                                <h5 class="card-title"><b>Vegetable</b></h5>
-                                <p class="card-text small">Product description</p>
-                                <p class="tags">Price <span>Rs 100/=</span></p>
-                                <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart"
-                                                                                   aria-hidden="true"></i> Add to
-                                    cart</a>
-                            </div>
-                        </div>
-                    </div>
+                    <%
+                        // Placeholder for data retrieved from Servlet
+                        // This will be replaced by actual data from the servlet
+                    %>
 
-                    <div class="col-sm-3 col-md-6 col-lg-4">
-                        <div class="card mt-3">
-                            <div class="card-body text-center">
-                                <a href="product.jsp"> <img
-                                        src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fHZlZ2V0YWJsZXN8ZW58MHx8MHx8fDA%3D"
-                                        class="product-image"></a>
-                                <h5 class="card-title"><b>Vegetable</b></h5>
-                                <p class="card-text small">Product description</p>
-                                <p class="tags"> Price <span>Rs 100/=</span></p>
-                                <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart"
-                                                                                   aria-hidden="true"></i> Add to
-                                    cart</a>
-                            </div>
-                        </div>
-                    </div>
 
 
                 </div>
-
-
-                <div class="row">
-                    <div class="col-sm-3 col-md-6 col-lg-4">
-                        <div class="card mt-3">
-                            <div class="card-body text-center">
-                                <a href="product.jsp"> <img
-                                        src="https://images.unsplash.com/photo-1590868309235-ea34bed7bd7f?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjh8fHZlZ2V0YWJsZXN8ZW58MHx8MHx8fDA%3D"
-                                        class="product-image"></a>
-                                <h5 class="card-title"><b>Vegetable</b></h5>
-                                <p class="card-text small">Product description</p>
-                                <p class="tags">Price <span>Rs 100/=</span></p>
-                                <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart"
-                                                                                   aria-hidden="true"></i> Add to
-                                    cart</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3 col-md-6 col-lg-4">
-                        <div class="card mt-3">
-                            <div class="card-body text-center">
-                                <a href="product.jsp"><img
-                                        src="https://images.unsplash.com/photo-1567539549213-cc1697632146?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjUxfHx2ZWdldGFibGVzfGVufDB8fDB8fHww"
-                                        class="product-image"></a>
-                                <h5 class="card-title"><b>Vegetable</b></h5>
-                                <p class="card-text small">Product description</p>
-                                <p class="tags">Price <span>Rs 100/=</span></p>
-                                <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart"
-                                                                                   aria-hidden="true"></i> Add to
-                                    cart</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3 col-md-6 col-lg-4">
-                        <div class="card mt-3">
-                            <div class="card-body text-center">
-                                <a href="product.jsp"> <img
-                                        src="https://images.unsplash.com/photo-1565685225009-fc85d9109c80?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mjk0fHx2ZWdldGFibGVzfGVufDB8fDB8fHww"
-                                        class="product-image"></a>
-                                <h5 class="card-title"><b>Vegetable</b></h5>
-                                <p class="card-text small">Product description</p>
-                                <p class="tags">Price <span>Rs 100/=</span></p>
-                                <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart"
-                                                                                   aria-hidden="true"></i> Add to
-                                    cart</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
-
-                <div class="row">
-                    <div class="col-sm-3 col-md-6 col-lg-4">
-                        <div class="card mt-3">
-                            <div class="card-body text-center">
-                                <a href="product.jsp"><img
-                                        src="https://images.unsplash.com/photo-1553536645-f83758b55d23?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MzF8fHZlZ2V0YWJsZXN8ZW58MHx8MHx8fDA%3D"
-                                        class="product-image"></a>
-                                <h5 class="card-title"><b>Vegetable</b></h5>
-                                <p class="card-text small">Product description</p>
-                                <p class="tags">Price <span>Rs 100/=</span></p>
-                                <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart"
-                                                                                   aria-hidden="true"></i> Add to
-                                    cart</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3 col-md-6 col-lg-4">
-                        <div class="card mt-3">
-                            <div class="card-body text-center">
-                                <a href="product.jsp"><img
-                                        src="https://images.unsplash.com/photo-1567375698348-5d9d5ae99de0?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDZ8fHZlZ2V0YWJsZXN8ZW58MHx8MHx8fDA%3D"
-                                        class="product-image"></a>
-                                <h5 class="card-title"><b>Vegetable</b></h5>
-                                <p class="card-text small">Product description</p>
-                                <p class="tags">Price <span>Rs 100/=</span></p>
-                                <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart"
-                                                                                   aria-hidden="true"></i> Add to
-                                    cart</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-sm-3 col-md-6 col-lg-4">
-                        <div class="card mt-3">
-                            <div class="card-body text-center">
-                                <a href="product.jsp"><img
-                                        src="https://images.unsplash.com/photo-1449300079323-02e209d9d3a6?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NjR8fHZlZ2V0YWJsZXN8ZW58MHx8MHx8fDA%3D"
-                                        class="product-image"></a>
-                                <h5 class="card-title"><b>Vegetable</b></h5>
-                                <p class="card-text small">Product description </p>
-                                <p class="tags">Price <span>Rs 100/=</span> </p>
-                                <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart"
-                                                                                   aria-hidden="true"></i> Add to
-                                    cart</a>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-
 
             </div>
 
@@ -235,6 +90,7 @@
         </div>
     </div>
 </section>
+
 
 <jsp:include page="feedback.jsp"/>
 
@@ -248,6 +104,21 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+<script>
+    function fetchData() {
+        fetch('display_productCardServlet') // Update the servlet name
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('display_cardproduct').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    window.onload = fetchData;
+</script>
+
 
 </body>
 </html>

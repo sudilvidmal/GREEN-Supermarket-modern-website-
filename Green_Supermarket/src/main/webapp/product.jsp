@@ -32,89 +32,12 @@
 
 <div class="main-content">
     <div class="container my-5">
-        <div class="row">
-            <div class="col-md-5">
-                <div class="main-img">
-                    <img class="img-fluid"
-                         src="https://images.unsplash.com/photo-1556843824-2a36847e3173?q=80&w=2576&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
-                         alt="ProductS">
+        <div class="row" id="product_details">
+            <%
+                // Placeholder for data retrieved from Servlet
+                // This will be replaced by actual data from the servlet
+            %>
 
-                </div>
-            </div>
-            <div class="col-md-7">
-                <div class="main-description px-2">
-                    <div class="category text-bold mt-2">
-                        Category: Vegetables
-                    </div>
-                    <div class="product-title text-bold my-3">
-                        Kale
-                    </div>
-
-
-                    <div class="price-area my-4">
-                        <p class="old-price mb-1">
-                            <del>Rs 220 /=</del>
-                            <span class="old-price-discount text-danger">(20% off)</span></p>
-                        <p class="new-price text-bold mb-1">Rs 176 /=</p>
-                        <p class="text-secondary mb-1">(Additional tax may apply on checkout)</p>
-                        <div class="instock">
-                            <span>In Stock</span>
-                        </div>
-
-
-                    </div>
-
-
-                    <div class="buttons d-flex my-5">
-                        <div class="block">
-                            <a href="#" class="shadow btn custom-btn ">Wishlist</a>
-                        </div>
-                        <div class="block">
-                            <button class="shadow btn custom-btn">Add to cart</button>
-                        </div>
-
-                        <div class="block quantity">
-                            <input type="number" class="form-control" id="cart_quantity" value="1" min="0" max="5"
-                                   placeholder="Enter email" name="cart_quantity">
-                        </div>
-
-                    </div>
-
-
-                </div>
-
-                <div class="product-details my-4">
-                    <p class="details-title text-color mb-1">Product Details</p>
-                    <p class="description">Elevate your culinary experience with our premium Organic Kale, a
-                        nutrient-packed powerhouse that brings freshness and vitality to your meals. Sourced from
-                        certified organic farms, our kale is carefully cultivated to ensure the highest quality and
-                        flavor. Packed with essential vitamins and minerals, it's a versatile and health-conscious
-                        addition to any kitchen </p>
-                </div>
-
-                <div class="row questions bg-light p-3">
-                    <div class="col-md-1 icon">
-                        <i class="fa-brands fa-rocketchat questions-icon"></i>
-                    </div>
-                    <div class="col-md-11 text">
-                        Have a question about our products at E-Store? Feel free to contact our representatives via live
-                        chat or email.
-                    </div>
-                </div>
-
-                <div class="delivery my-4">
-                    <p class="font-weight-bold mb-0"><span><i class="fa-solid fa-truck"></i></span> <b>Delivery done in
-                        3 hours from time of purchase</b></p>
-                    <p class="text-secondary">Order now to get this product delivery</p>
-                </div>
-                <div class="delivery-options my-4">
-                    <p class="font-weight-bold mb-0"><span><i class="fa-solid fa-filter"></i></span> <b>Delivery
-                        options</b></p>
-                    <p class="text-secondary">View delivery options here</p>
-                </div>
-
-
-            </div>
         </div>
     </div>
 
@@ -178,6 +101,7 @@
 <jsp:include page="feedback.jsp"/>
 
 <jsp:include page="footer.jsp"/>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.js"
         integrity="sha512-docBEeq28CCaXCXN7cINkyQs0pRszdQsVBFWUd+pLNlEk3LDlSDDtN7i1H+nTB8tshJPQHS0yu0GW9YGFd/CRg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -189,4 +113,18 @@
         crossorigin="anonymous"></script>
 
 </body>
+<script>
+    function fetchData() {
+        fetch('product_detailsservlet')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('product_details').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    window.onload = fetchData;
+</script>
 </html>
