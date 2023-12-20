@@ -105,7 +105,7 @@
 <body class="d-flex align-items-center py-4 bg-body-tertiary">
 
 <main class="form-signin w-100 m-auto">
-    <form>
+    <form action="adminonlyloginservlet" method="post">
         <img class="mb- w-100" src="images/green-supermarket-high-resolution-logo-black-transparent.png" alt="">
         <h3 class="h3 mt-5 mb-3 fw-normal">Sign In</h3>
 
