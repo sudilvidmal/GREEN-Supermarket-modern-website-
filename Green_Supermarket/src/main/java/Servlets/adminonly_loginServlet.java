@@ -1,4 +1,4 @@
-
+package servlets;
 
 import java.io.*;
 
@@ -19,9 +19,7 @@ public class adminonly_loginServlet extends HttpServlet {
         String password = request.getParameter("adminpass");
 
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-
-            Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/green_sp_db", "root", "root");
+            Connection conn = dbconnection.getConnection();
 
             System.out.println("Connection Succeed!");
 

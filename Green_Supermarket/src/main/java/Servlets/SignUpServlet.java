@@ -1,4 +1,4 @@
-package Servlets;
+package servlets;
 
 import java.io.*;
 
@@ -24,9 +24,7 @@ public class SignUpServlet extends HttpServlet {
             String password = request.getParameter("upassword");
 
             try {
-                Class.forName("com.mysql.jdbc.Driver");
-
-                Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/green_sp_db", "root", "root");
+                Connection conn = dbconnection.getConnection();
 
                 System.out.println("Connection Succeed!");
 
@@ -39,9 +37,8 @@ public class SignUpServlet extends HttpServlet {
                 pre.setString(4, password);
 
                 pre.execute();
-                response.getWriter().write("success");
                 System.out.println("Data Inserted Successfully");
-                response.getWriter().println("<script>alert('Signed Up Successfully!'); window.location.href='index.jsp';</script>");
+                response.getWriter().println("<script>alert('Signed up successfully!'); window.location.href = 'index.jsp';</script>");
                 conn.close();
 
             } catch (SQLException | ClassNotFoundException b) {

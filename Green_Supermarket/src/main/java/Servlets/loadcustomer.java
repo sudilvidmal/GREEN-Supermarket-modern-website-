@@ -1,8 +1,10 @@
+package servlets;
+
 import java.io.*;
 import java.sql.*;
-
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
+
 
 @WebServlet(name = "display_customerServlet", value = "/display_customerServlet")
 public class loadcustomer extends HttpServlet {
@@ -12,17 +14,9 @@ public class loadcustomer extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        String jdbcDriver = "com.mysql.jdbc.Driver";
-        String dburl = "jdbc:mysql://localhost:3306/green_sp_db";
-
-        String user = "root";
-        String pass = "root";
-
         try {
 
-            Class.forName(jdbcDriver);
-
-            Connection conn = DriverManager.getConnection(dburl, user, pass);
+            Connection conn = dbconnection.getConnection();
 
             Statement stmt = conn.createStatement();
             String sql = "SELECT * FROM customer_table";
@@ -30,17 +24,13 @@ public class loadcustomer extends HttpServlet {
 
             while (rs.next()) {
 
-
-                        out.println("<tr>");
+                out.println("<tr>");
                 out.println("<td>" + rs.getInt("customer_id") + "</td>");
                 out.println("<td>" + rs.getString("customer_name") + "</td>");
                 out.println("<td>" + rs.getString("customer_email") + "</td>");
                 out.println("<td>" + rs.getString("customer_phone") + "</td>");
                 out.println("<td>" + rs.getString("customer_password") + "</td>");
                 out.println("</tr>");
-
-
-
 
             }
             rs.close();

@@ -1,4 +1,4 @@
-package Servlets;
+package servlets;
 
 import java.io.*;
 
@@ -26,9 +26,7 @@ public class LoginServlet extends HttpServlet {
 
 
         try {
-            Class.forName("com.mysql.cj.jdbc.Driver");
-
-            Connection conn = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/green_sp_db", "root", "root");
+            Connection conn = dbconnection.getConnection();
 
             String query = "SELECT customer_id FROM customer_table WHERE customer_email = ? AND customer_password = ?";
             try (PreparedStatement preparedStatement = conn.prepareStatement(query)) {
@@ -54,7 +52,7 @@ public class LoginServlet extends HttpServlet {
 
                     } else {
                         // Authentication failed
-                        response.getWriter().println("<script>alert('Login Failed!'); window.location.href='login.jsp';</script>");
+                        response.getWriter().println("<script>alert('Login Failed!'); window.location.href='index.jsp';</script>");
                     }
                 }
             }
