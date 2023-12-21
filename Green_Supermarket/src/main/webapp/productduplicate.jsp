@@ -296,36 +296,36 @@
                             Delete Product
                         </button>
                     </div>
+                    <div class="col-sm-3 col-md-3 col-lg-2   pt-3 px-3">
+                        <div>
+                            <jsp:include page="add_category.jsp"/>
+                        </div>
+                        <button type="button" class="btn btn-success" data-bs-toggle="modal"
+                                data-bs-target="#add_categorymodal">
+                            Add category
+                        </button>
+                    </div>
                 </div>
 
                 <div class="table-responsive mt-5">
-                    <table class="table table-bordered">
+                    <table border="1" class="table table-hover table-bordered"  >
                         <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Category</th>
+                            <th>Details</th>
+                            <th>Price</th>
+                            <th>Stock</th>
+
+
                         </tr>
                         </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
+                        <tbody id="display_product">
+
+                        <%
+
+                        %>
                         </tbody>
                     </table>
                 </div>
@@ -368,6 +368,20 @@
         </main>
     </div>
 </div>
+<script>
+    function fetchData() {
+        fetch('display_productServlet')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('display_product').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    window.onload = fetchData;
+</script>
 <script src="dashboardassets/dist/js/bootstrap.bundle.min.js"></script>
 
 

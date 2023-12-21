@@ -3,9 +3,9 @@ package servlets;
 import java.io.*;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
+
 @WebServlet(name = "delete_productServlet", value = "/delete_productServlet")
 public class delete_productServlet extends HttpServlet {
     @Override
@@ -16,23 +16,15 @@ public class delete_productServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-//        String url ="jdbc:mysql://127.0.0.1:3306/green_sp_db";
-//        String username = "root";
-//        String password = "siri";
 
         try{
             int pid = Integer.parseInt(request.getParameter("txtpid"));
             String pname = request.getParameter("txtpname");
             String productcateg = request.getParameter("pcateg");
 
-
-            //Establishing connection
-            Class.forName("com.mysql.jdbc.Driver");
             Connection conn = dbconnection.getConnection();
             System.out.println("Connection succeed");
 
-
-            //insert query
             String qry = "DELETE FROM product_table WHERE product_id=? AND product_name=? AND product_category=?";
 
             PreparedStatement pre = conn.prepareStatement(qry);
@@ -46,7 +38,6 @@ public class delete_productServlet extends HttpServlet {
             response.sendRedirect(request.getContextPath()+"/productduplicate.jsp");
 
             conn.close();
-
 
         }
         catch (Exception e){

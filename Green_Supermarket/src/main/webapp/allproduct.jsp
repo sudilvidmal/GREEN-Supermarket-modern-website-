@@ -39,16 +39,11 @@
 
                 <h2 class="blog-sidebar-title"><b>Categories</b></h2>
                 <hr/>
+                <div id="display_category">
+                <%
 
-                <a href="#"><p class="blog-sidebar-list">Vegetable</p></a>
-                <a href="#"><p class="blog-sidebar-list">Fruits</p></a>
-                <a href="#"><p class="blog-sidebar-list">Meat</p></a>
-                <a href="#"><p class="blog-sidebar-list">Fish</p></a>
-                <a href="#"><p class="blog-sidebar-list">Beverages</p></a>
-                <a href="#"><p class="blog-sidebar-list">Chilled</p></a>
-                <a href="#"><p class="blog-sidebar-list">Frozen Food</p></a>
-                <a href="#"><p class="blog-sidebar-list">Grocery</p></a>
-                <a href="#"><p class="blog-sidebar-list">Homeware</p></a>
+                %>
+            </div>
 
             </div>
 
@@ -75,9 +70,12 @@
 
                 <div class="row" id="display_cardproduct">
 
+
+
                     <%
                         // Placeholder for data retrieved from Servlet
                         // This will be replaced by actual data from the servlet
+
                     %>
 
 
@@ -104,8 +102,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+  
+
 <script>
-    function fetchData() {
+
+    function fetchProductData() {
+
         fetch('display_productCardServlet') // Update the servlet name
             .then(response => response.text())
             .then(data => {
@@ -115,9 +117,25 @@
                 console.error('Error:', error);
             });
     }
-    window.onload = fetchData;
 
+    window.onload = function () {
+        fetchProductData();
+        fetchCategoryData(); // Call the correct function
+    };
 
+</script>
+
+<script>
+    function fetchCategoryData() {
+        fetch('display_categoryallproduct')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('display_category').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
 
         // Check if showModal attribute is set
         <% if (request.getAttribute("showModal") != null && (Boolean) request.getAttribute("showModal")) { %>
