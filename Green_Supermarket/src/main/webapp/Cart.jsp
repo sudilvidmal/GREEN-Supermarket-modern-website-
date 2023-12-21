@@ -22,87 +22,93 @@
                         <button type="button" class="btn-close " data-bs-dismiss="modal" aria-label="Close"
                                 style="background-color: white"></button>
 
-
                         <div class="modal-body">
-
-
                             <div class="cartcard">
                                 <div class="row">
                                     <div class="col-lg-8 cart">
                                         <div class="title">
                                             <div class="row">
-                                                <div class="col"><h4><b>Cart</b></h4></div>
-                                                <div class="col align-self-center text-right text-muted">3 items</div>
+                                                <div class="col-12"><h4><b>Cart</b></h4></div>
                                             </div>
                                         </div>
-                                        <div class="row border-top border-bottom">
-                                            <div class="row main align-items-center">
-                                                <div class="col-2"><img class="img-fluid" src="images/latest-product/1.webp"></div>
-                                                <div class="col">
-                                                    <div class="row text-muted">Bakery</div>
-                                                    <div class="row">Bread</div>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-                                                </div>
-                                                <div class="col">&#8360; 44.00 <i class="fa fa-trash"></i></div>
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="row main align-items-center">
-                                                <div class="col-2"><img class="img-fluid" src="images/latest-product/6.webp"></div>
-                                                <div class="col">
-                                                    <div class="row text-muted">Fruits</div>
-                                                    <div class="row">Avocado</div>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-                                                </div>
-                                                <div class="col">&#8360; 44.00 <i class="fa fa-trash"></i></div>
-                                            </div>
-                                        </div>
-                                        <div class="row border-top border-bottom">
-                                            <div class="row main align-items-center">
-                                                <div class="col-2"><img class="img-fluid" src="images/latest-product/2.webp"></div>
-                                                <div class="col">
-                                                    <div class="row text-muted">Oil</div>
-                                                    <div class="row">Olive Oil</div>
-                                                </div>
-                                                <div class="col">
-                                                    <a href="#">-</a><a href="#" class="border">1</a><a href="#">+</a>
-                                                </div>
-                                                <div class="col">&#8360; 44.00 <i class="fas fa-trash"></i></div>
-                                            </div>
-                                        </div>
-                                        <div class="back-to-shop"><a href="#">&leftarrow;</a><span class="text-muted">Back to Shopping</span></div>
-                                    </div>
-                                    <div class="col-lg-4 summary">
-                                        <div><h5><b>Summary</b></h5></div>
-                                        <hr>
-                                        <div class="row">
-                                            <div class="col" style="padding-left:0;">ITEMS 3</div>
-                                            <div class="col text-right">&#8360; 132.00</div>
-                                        </div>
-                                        <form>
-                                            <p>Shipping</p>
-                                            <select><option class="text-muted">Delivery- &#8360;&nbsp;5.00</option></select>
 
-                                        </form>
-                                        <div class="row" style="border-top: 1px solid rgba(0,0,0,.1); padding: 2vh 0;">
-                                            <div class="col">Total Price</div>
-                                            <div class="col text-right">&#8360; 137.00</div>
+                                        <div id="display_cart">
+
+                                            <%
+                                                // Placeholder for data retrieved from Servlet
+                                                // This will be replaced by actual data from the servlet
+                                            %>
+
                                         </div>
-                                        <button class="btn checkoutbtn">Checkout</button>
+
+                                        <div class="row">
+                                            <div class="col-6 d-flex justify-content-start">
+                                                <div class="back-to-shop">
+                                                    <a href="allproduct.jsp">&leftarrow; <span class="text-muted"> Back to Shopping</span></a>
+                                                </div>
+                                            </div>
+
+                                            <div class="col-6 d-flex justify-content-end">
+
+                                                <div class="back-to-shop">
+                                                    <a href="checkout.jsp" ><span
+                                                            class="text-muted">Proceed To Checkout </span> &rightarrow;</a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+
                                     </div>
+
+                                    <div class="col-lg-4 summary" id="display_cart_items">
+
+                                        <%
+                                            // Placeholder for data retrieved from Servlet
+                                            // This will be replaced by actual data from the servlet
+                                        %>
+
+                                    </div>
+
+
                                 </div>
-
                             </div>
-
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
     </div>
 </div>
+
+<script>
+
+    function fetchDataCart() {
+        fetch('DisplayCartServlet')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('display_cart').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    function fetchDataCartItems() {
+        fetch('DisplayCartItemsPriceServlet')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('display_cart_items').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    function fetchDataCartCombined() {
+        fetchDataCart();
+        fetchDataCartItems();
+    }
+
+    window.onclick = fetchDataCartCombined;
+
+</script>

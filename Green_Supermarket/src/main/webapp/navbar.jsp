@@ -10,6 +10,7 @@
 <head>
     <title>navbar</title>
     <link rel="stylesheet" type="text/css" href="css/navstyle.css">
+
 </head>
 <body>
 
@@ -46,12 +47,11 @@
 
             <div class="header__cart">
                 <ul>
-                    <jsp:include page="Wishlist.jsp"/>
-                    <li><a href="" data-bs-toggle="modal" data-bs-target="#Wishlist"><i class="fa fa-heart"></i> <span>1</span></a></li>
                     <jsp:include page="Cart.jsp"/>
-                    <li><a href="" data-bs-toggle="modal" data-bs-target="#Cart"><i class="fa fa-shopping-bag"></i> <span>3</span></a></li>
+
+                    <li><a href="" data-bs-toggle="modal" data-bs-target="#Cart"><i class="fa fa-shopping-bag"></i> <span id="itemCountSpan">0</span></a></li>
                 </ul>
-                <div class="header__cart__price">Total: <span>Rs. 1500.00</span></div>
+                <div class="header__cart__price">Total: <span id="totalPriceSpan">Rs. 0.00</span></div>
             </div>
 
             <div class="loginbtn">
@@ -96,5 +96,24 @@
     </div>
 </div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script>
+
+        $.ajax({
+            url: "DisplayCartValuesNavbarServlet",
+            method: "GET",
+            dataType: "json",
+            success: function (data) {
+                // Update the item count and total price in the respective elements
+                $("#itemCountSpan").text(data.itemCount2);
+                $("#totalPriceSpan").text("Rs. " + data.totalPrice2.toFixed(2));
+            },
+            error: function (xhr, status, error) {
+                console.error("Error fetching cart data: " + error);
+            }
+        });
+
+</script>
 </body>
 </html>
