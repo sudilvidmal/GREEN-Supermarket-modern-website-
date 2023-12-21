@@ -18,7 +18,7 @@ import jakarta.servlet.http.Part;
 public class update_productServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
-        // You may want to implement something here if needed.
+
     }
 
     @Override
@@ -34,13 +34,13 @@ public class update_productServlet extends HttpServlet {
             InputStream inputStream = filePart.getInputStream();
             int pid = Integer.parseInt(request.getParameter("txtpid"));
 
-            // Specify the directory to store uploaded files
+
             String uploadDirectory = "D://website//Green_Supermarket//src//main//webapp//productimage";
             String fileName = filePart.getSubmittedFileName();
             String relativeFilePath = "productimage" + File.separator + fileName;
             String filePath = uploadDirectory + File.separator + fileName;
 
-            // Save the file
+
             try (InputStream input = filePart.getInputStream();
                  OutputStream output = new FileOutputStream(filePath)) {
                 byte[] buffer = new byte[1024];
@@ -50,9 +50,9 @@ public class update_productServlet extends HttpServlet {
                 }
             }
 
-            // Establish database connection
+
             try (Connection conn = dbconnection.getConnection()) {
-                // Update query
+
                 String qry = "UPDATE green_sp_db.product_table SET product_name=?, product_category=?, product_details=?, product_price=?, product_image_path=? , product_stock=? WHERE product_id=?";
                 try (PreparedStatement pre = conn.prepareStatement(qry)) {
                     pre.setString(1, pname);

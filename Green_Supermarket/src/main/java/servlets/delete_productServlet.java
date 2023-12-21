@@ -16,9 +16,6 @@ public class delete_productServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
-//        String url ="jdbc:mysql://127.0.0.1:3306/green_sp_db";
-//        String username = "root";
-//        String password = "siri";
 
         try{
             int pid = Integer.parseInt(request.getParameter("txtpid"));
@@ -26,13 +23,13 @@ public class delete_productServlet extends HttpServlet {
             String productcateg = request.getParameter("pcateg");
 
 
-            //Establishing connection
+
             Class.forName("com.mysql.jdbc.Driver");
             Connection conn = dbconnection.getConnection();
             System.out.println("Connection succeed");
 
 
-            //insert query
+
             String qry = "DELETE FROM product_table WHERE product_id=? AND product_name=? AND product_category=?";
 
             PreparedStatement pre = conn.prepareStatement(qry);

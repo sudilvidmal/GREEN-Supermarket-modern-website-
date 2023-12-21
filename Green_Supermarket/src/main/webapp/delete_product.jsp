@@ -40,12 +40,10 @@
                     </div>
 
                     <label class="form-label">Category</label>
-                    <select class="form-select" aria-label="Default select example" style="box-shadow: none" name="pcateg">
-                        <option selected>Open this select menu</option>
-                        <option value="Vegetables">Vegetables</option>
-                        <option value="Fruits">Fruits</option>
-                        <option value="Homeware">Homeware</option>
-                        <option value="Stationary">Stationary</option>
+                    <select class="form-select" aria-label="Default select example" style="box-shadow: none" name="pcateg" id="display_categorydelete">
+                       <%
+
+                       %>
                     </select>
 
 
@@ -64,6 +62,21 @@
 </form>
 
 
+<script>
+    function fetchData() {
+        fetch('display_categoryServlet')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('display_categorydelete').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    // Call the fetchData function to populate the dropdown on page load
+    fetchData();
+</script>
 
 </body>
 </html>

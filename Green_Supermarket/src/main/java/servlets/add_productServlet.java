@@ -35,12 +35,12 @@ public class add_productServlet extends HttpServlet {
             Part filePart = request.getPart("productimg");
             String fileName = filePart.getSubmittedFileName();
 
-            // Specify the directory to store uploaded files
+
             String uploadDirectory = "D://website//Green_Supermarket//src//main//webapp//productimage";
             String relativeFilePath = "productimage" + File.separator + fileName;
             String filePath = uploadDirectory + File.separator + fileName;
 
-            // Save the file
+
             try (InputStream input = filePart.getInputStream();
                  OutputStream output = new FileOutputStream(filePath)) {
 
@@ -51,9 +51,9 @@ public class add_productServlet extends HttpServlet {
                 }
             }
 
-            // Establish database connection
+
             try (Connection conn = dbconnection.getConnection()) {
-                // Insert query
+
                 String qry = "INSERT INTO green_sp_db.product_table (product_name, product_category, product_details, product_price, product_image_path,product_stock) " +
                         "VALUES (?, ?, ?, ?, ?,?)";
 

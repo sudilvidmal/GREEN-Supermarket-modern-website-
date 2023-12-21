@@ -33,10 +33,87 @@
 <div class="main-content">
     <div class="container my-5">
         <div class="row" id="product_details">
-            <%
-                // Placeholder for data retrieved from Servlet
-                // This will be replaced by actual data from the servlet
-            %>
+            <div class="col-md-5">
+                <div class="main-img">
+                    <img class="img-fluid"
+                         src="${requestScope.product_image_path}"
+                         alt="ProductS">
+
+                </div>
+            </div>
+            <div class="col-md-7">
+                <div class="main-description px-2">
+                    <div class="category text-bold mt-2">
+                        Category: ${requestScope.product_category}
+                    </div>
+                    <div class="product-title text-bold my-3">
+                        ${requestScope.product_name}
+                    </div>
+
+
+                    <div class="price-area my-4">
+                        <p class="old-price mb-1">
+                            <del>Rs 220 /=</del>
+                            <span class="old-price-discount text-danger">(20% off)</span></p>
+                        <p class="new-price text-bold mb-1">Rs  ${requestScope.product_price}</p>
+                        <p class="text-secondary mb-1">(Additional tax may apply on checkout)</p>
+                        <div class="instock">
+                            <span>In Stock</span>
+                        </div>
+
+
+                    </div>
+
+
+                    <div class="buttons d-flex my-5">
+                        <div class="block">
+                            <a href="#" class="shadow btn custom-btn ">Wishlist</a>
+                        </div>
+                        <div class="block">
+                            <button class="shadow btn custom-btn">Add to cart</button>
+                        </div>
+
+                        <div class="block quantity">
+                            <input type="number" class="form-control" id="cart_quantity" value="1" min="0" max="5"
+                                   placeholder="Enter email" name="cart_quantity">
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+                <div class="product-details my-4">
+                    <p class="details-title text-color mb-1">Product Details</p>
+                    <p class="description"> ${requestScope.product_details} </p>
+                </div>
+
+                <div class="row questions bg-light p-3">
+                    <div class="col-md-1 icon">
+                        <i class="fa-brands fa-rocketchat questions-icon"></i>
+                    </div>
+                    <div class="col-md-11 text">
+                        Have a question about our products at E-Store? Feel free to contact our representatives via live
+                        chat or email.
+                    </div>
+                </div>
+
+                <div class="delivery my-4">
+                    <p class="font-weight-bold mb-0"><span><i class="fa-solid fa-truck"></i></span> <b>Delivery done in
+                        3 hours from time of purchase</b></p>
+                    <p class="text-secondary">Order now to get this product delivery</p>
+                </div>
+                <div class="delivery-options my-4">
+                    <p class="font-weight-bold mb-0"><span><i class="fa-solid fa-filter"></i></span> <b>Delivery
+                        options</b></p>
+                    <p class="text-secondary">View delivery options here</p>
+                </div>
+
+
+            </div>
+                <!-- Display other product details as needed -->
+        </div>
+            </div>
 
         </div>
     </div>
@@ -111,20 +188,28 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+<%--<script>--%>
+<%--    function fetchData(productId) {--%>
+<%--        fetch('product_detailsservlet?productId=' + productId)--%>
+<%--            .then(response => response.text())--%>
+<%--            .then(data => {--%>
+<%--                document.getElementById('product_details').innerHTML = data;--%>
+<%--            })--%>
+<%--            .catch(error => {--%>
+<%--                console.error('Error:', error);--%>
+<%--            });--%>
+<%--    }--%>
+
+<%--    // Call fetchData with the product ID when the page loads--%>
+<%--    window.onload = function() {--%>
+<%--        // Extract product ID from the URL query parameter--%>
+<%--        var urlParams = new URLSearchParams(window.location.search);--%>
+<%--        var productId = urlParams.get('productId');--%>
+<%--        fetchData(productId);--%>
+<%--    };--%>
+<%--</script>--%>
+
 
 </body>
-<script>
-    function fetchData() {
-        fetch('product_detailsservlet')
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('product_details').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-    }
 
-    window.onload = fetchData;
-</script>
 </html>

@@ -16,10 +16,10 @@ import jakarta.servlet.http.HttpServletResponse;
 
 @WebServlet(name = "display_productCardServlet", value = "/display_productCardServlet")
 public class display_productCardServlet extends HttpServlet {
-    // Update the constants with your database configuration
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/green_sp_db";
-    private static final String JDBC_USER = "root";
-    private static final String JDBC_PASSWORD = "80297080aA";
+
+//    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/green_sp_db";
+//    private static final String JDBC_USER = "root";
+//    private static final String JDBC_PASSWORD = "80297080aA";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
@@ -27,7 +27,7 @@ public class display_productCardServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-        try (Connection conn = DriverManager.getConnection(JDBC_URL, JDBC_USER, JDBC_PASSWORD)) {
+        try (Connection conn = dbconnection.getConnection()) {
             String sql = "SELECT product_id, product_name, product_category, product_details, product_price, product_image_path FROM green_sp_db.product_table";
 
             try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
@@ -36,10 +36,12 @@ public class display_productCardServlet extends HttpServlet {
                     out.println("<div class=\"card mt-3\">");
                     out.println("<div class=\"card-body text-center\">");
 
-                    // Construct the imageURL using the relative path
+
                     String imageURL = request.getContextPath() + "/" + rs.getString("product_image_path");
 
-                    out.println("<a href=\"product.jsp\"><img src=\"" + imageURL + "\" class=\"product-image\"></a>");
+                    out.println("<a href=\"product_detailsservlet?productId=" + rs.getString("product_id") + "\">" +
+                            "<img src=\"" + imageURL + "\" class=\"product-image\"></a>");
+
                     out.println("<h5 class=\"card-title\"><b>" + rs.getString("product_name") + "</b></h5>");
                     out.println("<p class=\"card-text small\">" + rs.getString("product_details") + "</p>");
                     out.println("<p class=\"tags\">Price <span>Rs " + rs.getString("product_price") + "</span></p>");
@@ -52,8 +54,10 @@ public class display_productCardServlet extends HttpServlet {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Log the exception or handle it appropriately
+
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error fetching product data");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 }

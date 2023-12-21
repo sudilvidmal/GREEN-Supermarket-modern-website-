@@ -15,7 +15,7 @@
 </head>
 <body>
 
-
+<form action="add_categoryServlet" method="post" enctype="multipart/form-data">
 <div class="modal fade" id="add_categorymodal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog">
 
@@ -32,19 +32,18 @@
 
                 <div class="mb-3">
                     <label  class="form-label">Category Name</label>
-                    <input class="form-control" type="text"  aria-label="default input example">
+                    <input class="form-control" type="text"  aria-label="default input example" name="category">
                 </div>
             </div>
 
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-success">Save</button>
+                <button type="submit" class="btn btn-success">Save</button>
             </div>
         </div>
     </div>
 </div>
-
-
+</form>
 
 </body>
 </html>
