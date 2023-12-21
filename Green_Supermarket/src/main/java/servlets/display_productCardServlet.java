@@ -3,7 +3,7 @@ package servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-import java.sql.DriverManager;
+
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -18,10 +18,10 @@ import jakarta.servlet.http.HttpServletResponse;
 public class display_productCardServlet extends HttpServlet {
 
 
-
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
@@ -30,6 +30,7 @@ public class display_productCardServlet extends HttpServlet {
 
             try (Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
                 while (rs.next()) {
+
                     out.println("<div class=\"col-sm-3 col-md-6 col-lg-4\">");
                     out.println("<div class=\"card mt-3\">");
                     out.println("<div class=\"card-body text-center\">");
@@ -41,8 +42,11 @@ public class display_productCardServlet extends HttpServlet {
                     // Hidden input field to store the product_id
                     out.println("<input type=\"hidden\" name=\"productId\" value=\"" + rs.getInt("product_id") + "\">");
 
+
                     out.println("<a href=\"product_detailsservlet?productId=" + rs.getString("product_id") + "\">" +
                             "<img src=\"" + imageURL + "\" class=\"product-image\"></a>");
+
+
                     out.println("<h5 class=\"card-title\"><b>" + rs.getString("product_name") + "</b></h5>");
                     out.println("<p class=\"card-text small\">" + rs.getString("product_details") + "</p>");
                     out.println("<p class=\"tags\">Price <span>Rs " + rs.getString("product_price") + "</span></p>");
@@ -66,3 +70,4 @@ public class display_productCardServlet extends HttpServlet {
         }
     }
 }
+

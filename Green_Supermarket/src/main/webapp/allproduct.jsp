@@ -70,7 +70,11 @@
 
                 <div class="row" id="display_cardproduct">
 
+
+
                     <%
+                        // Placeholder for data retrieved from Servlet
+                        // This will be replaced by actual data from the servlet
 
                     %>
 
@@ -98,8 +102,12 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+  
+
 <script>
+
     function fetchProductData() {
+
         fetch('display_productCardServlet') // Update the servlet name
             .then(response => response.text())
             .then(data => {
@@ -114,6 +122,7 @@
         fetchProductData();
         fetchCategoryData(); // Call the correct function
     };
+
 </script>
 
 <script>
@@ -127,6 +136,15 @@
                 console.error('Error:', error);
             });
     }
+
+        // Check if showModal attribute is set
+        <% if (request.getAttribute("showModal") != null && (Boolean) request.getAttribute("showModal")) { %>
+        $(document).ready(function(){
+        // Open Bootstrap modal
+        $('#Cart').modal('show');
+    });
+        <% } %>
+
 </script>
 
 
