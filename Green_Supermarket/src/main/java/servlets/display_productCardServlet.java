@@ -34,21 +34,28 @@ public class display_productCardServlet extends HttpServlet {
                     out.println("<div class=\"card mt-3\">");
                     out.println("<div class=\"card-body text-center\">");
 
-
                     String imageURL = request.getContextPath() + "/" + rs.getString("product_image_path");
+
+                    out.println("<form action=\"AddToCartServlet\" method=\"post\">"); // Start of the form
+
+                    // Hidden input field to store the product_id
+                    out.println("<input type=\"hidden\" name=\"productId\" value=\"" + rs.getInt("product_id") + "\">");
 
                     out.println("<a href=\"product_detailsservlet?productId=" + rs.getString("product_id") + "\">" +
                             "<img src=\"" + imageURL + "\" class=\"product-image\"></a>");
-
                     out.println("<h5 class=\"card-title\"><b>" + rs.getString("product_name") + "</b></h5>");
                     out.println("<p class=\"card-text small\">" + rs.getString("product_details") + "</p>");
                     out.println("<p class=\"tags\">Price <span>Rs " + rs.getString("product_price") + "</span></p>");
-                    out.println("<a href=\"#\" target=\"_blank\" class=\"btn btn-success button-text\">"
-                            + "<i class=\"fa fa-shopping-cart\" aria-hidden=\"true\"></i> Add to cart</a>");
+
+                    out.println("<button type=\"submit\" class=\"btn btn-success button-text\">"
+                            + "<i class=\"fa fa-shopping-cart\" aria-hidden=\"true\"></i> Add to cart</button>");
+
+                    out.println("</form>"); // End of the form
+
                     out.println("</div>");
                     out.println("</div>");
                     out.println("</div>");
-                }
+               }
             }
         } catch (SQLException e) {
             e.printStackTrace();

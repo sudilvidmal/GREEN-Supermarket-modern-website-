@@ -106,7 +106,7 @@
             });
     }
 
-    // Call the fetchData function to populate the dropdown on page load
+
     fetchData();
 </script>
 </body>

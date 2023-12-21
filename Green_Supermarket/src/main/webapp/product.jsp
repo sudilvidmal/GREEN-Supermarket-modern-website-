@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Product details</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -66,9 +66,7 @@
 
 
                     <div class="buttons d-flex my-5">
-                        <div class="block">
-                            <a href="#" class="shadow btn custom-btn ">Wishlist</a>
-                        </div>
+
                         <div class="block">
                             <button class="shadow btn custom-btn">Add to cart</button>
                         </div>
@@ -111,7 +109,7 @@
 
 
             </div>
-                <!-- Display other product details as needed -->
+
         </div>
             </div>
 
@@ -131,7 +129,7 @@
                                 src="https://images.unsplash.com/photo-1633674432402-2f0c8ba69d72?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjM5fHx2ZWdldGFibGVzfGVufDB8fDB8fHww"
                                 class="product-image"></a>
                         <h5 class="card-title"><b>vegitable</b></h5>
-                        <p class="card-text small">Gannawanam ganin naththan nikan hitapan.</p>
+                        <p class="card-text small">#</p>
                         <p class="tags">Price Rs 100 /=</p>
                         <a href="https://api.whatsapp.com/send?phone=2348162667912" target="_blank"
                            class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -147,7 +145,7 @@
                                 src="https://images.unsplash.com/photo-1533321942807-08e4008b2025?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dmVnZXRhYmxlc3xlbnwwfHwwfHx8MA%3D%3D"
                                 class="product-image"></a>
                         <h5 class="card-title"><b>vegitable</b></h5>
-                        <p class="card-text small">Gannawanam ganin naththan nikan hitapan</p>
+                        <p class="card-text small">#</p>
                         <p class="tags">Price Rs 100 /=</p>
                         <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart"
                                                                            aria-hidden="true"></i> Add to cart</a>
@@ -188,26 +186,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
-<%--<script>--%>
-<%--    function fetchData(productId) {--%>
-<%--        fetch('product_detailsservlet?productId=' + productId)--%>
-<%--            .then(response => response.text())--%>
-<%--            .then(data => {--%>
-<%--                document.getElementById('product_details').innerHTML = data;--%>
-<%--            })--%>
-<%--            .catch(error => {--%>
-<%--                console.error('Error:', error);--%>
-<%--            });--%>
-<%--    }--%>
 
-<%--    // Call fetchData with the product ID when the page loads--%>
-<%--    window.onload = function() {--%>
-<%--        // Extract product ID from the URL query parameter--%>
-<%--        var urlParams = new URLSearchParams(window.location.search);--%>
-<%--        var productId = urlParams.get('productId');--%>
-<%--        fetchData(productId);--%>
-<%--    };--%>
-<%--</script>--%>
 
 
 </body>

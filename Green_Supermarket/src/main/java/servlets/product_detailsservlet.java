@@ -52,7 +52,7 @@ public class product_detailsservlet extends HttpServlet {
                         RequestDispatcher dispatcher = request.getRequestDispatcher("product.jsp");
                         dispatcher.forward(request, response);
                     } else {
-                        // Product not found
+
                         response.sendError(HttpServletResponse.SC_NOT_FOUND, "Product not found");
                     }
                 }

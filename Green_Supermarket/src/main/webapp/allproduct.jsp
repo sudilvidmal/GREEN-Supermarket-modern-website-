@@ -41,8 +41,7 @@
                 <hr/>
                 <div id="display_category">
                 <%
-                    // Placeholder for data retrieved from Servlet
-                    // This will be replaced by actual data from the servlet
+
                 %>
             </div>
 
@@ -72,8 +71,7 @@
                 <div class="row" id="display_cardproduct">
 
                     <%
-                        // Placeholder for data retrieved from Servlet
-                        // This will be replaced by actual data from the servlet
+
                     %>
 
 

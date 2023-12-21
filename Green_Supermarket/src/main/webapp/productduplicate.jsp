@@ -322,10 +322,9 @@
                         </tr>
                         </thead>
                         <tbody id="display_product">
-                        <%-- Data from Servlet will be displayed here --%>
+
                         <%
-                            // Placeholder for data retrieved from Servlet
-                            // This will be replaced by actual data from the servlet
+
                         %>
                         </tbody>
                     </table>
