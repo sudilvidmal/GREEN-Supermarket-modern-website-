@@ -16,11 +16,6 @@ public class display_categoryServlet extends HttpServlet {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-//        String jdbcDriver = "com.mysql.jdbc.Driver";
-//        String dburl = "jdbc:mysql://localhost:3306/green_sp_db";
-//
-//        String user = "root";
-//        String pass = "80297080aA";
 
         try {
 

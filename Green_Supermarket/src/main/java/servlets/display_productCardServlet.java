@@ -17,9 +17,7 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(name = "display_productCardServlet", value = "/display_productCardServlet")
 public class display_productCardServlet extends HttpServlet {
 
-//    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/green_sp_db";
-//    private static final String JDBC_USER = "root";
-//    private static final String JDBC_PASSWORD = "80297080aA";
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)

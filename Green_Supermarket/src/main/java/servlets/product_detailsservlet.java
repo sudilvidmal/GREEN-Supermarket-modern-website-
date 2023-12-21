@@ -20,9 +20,7 @@ import java.sql.SQLException;
 @WebServlet(name = "product_detailsservlet", value = "/product_detailsservlet")
 public class product_detailsservlet extends HttpServlet {
 
-//    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/green_sp_db";
-//    private static final String JDBC_USER = "root";
-//    private static final String JDBC_PASSWORD = "80297080aA";
+
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
