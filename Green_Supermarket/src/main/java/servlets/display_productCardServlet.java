@@ -17,9 +17,11 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet(name = "display_productCardServlet", value = "/display_productCardServlet")
 public class display_productCardServlet extends HttpServlet {
 
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
@@ -40,7 +42,11 @@ public class display_productCardServlet extends HttpServlet {
                     // Hidden input field to store the product_id
                     out.println("<input type=\"hidden\" name=\"productId\" value=\"" + rs.getInt("product_id") + "\">");
 
-                    out.println("<a href=\"product.jsp\"><img src=\"" + imageURL + "\" class=\"product-image\"></a>");
+
+                    out.println("<a href=\"product_detailsservlet?productId=" + rs.getString("product_id") + "\">" +
+                            "<img src=\"" + imageURL + "\" class=\"product-image\"></a>");
+
+
                     out.println("<h5 class=\"card-title\"><b>" + rs.getString("product_name") + "</b></h5>");
                     out.println("<p class=\"card-text small\">" + rs.getString("product_details") + "</p>");
                     out.println("<p class=\"tags\">Price <span>Rs " + rs.getString("product_price") + "</span></p>");
@@ -53,12 +59,14 @@ public class display_productCardServlet extends HttpServlet {
                     out.println("</div>");
                     out.println("</div>");
                     out.println("</div>");
-                }
+               }
             }
-        } catch (SQLException | ClassNotFoundException e) {
+        } catch (SQLException e) {
             e.printStackTrace();
-            // Log the exception or handle it appropriately
+
             response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error fetching product data");
+        } catch (ClassNotFoundException e) {
+            throw new RuntimeException(e);
         }
     }
 }

@@ -74,11 +74,10 @@
                     <div class="d-flex justify-content-evenly">
 
                         <div class="flex-grow-1 mx-1">
-                            <select class="form-select rounded-2 searchboxselect" aria-label="Select category">
-                                <option value="fruits">Fruits</option>
-                                <option value="veges">Vegetables</option>
-                                <option value="herbs">Herbs</option>
-                                <option value="meats">Meats</option>
+                            <select class="form-select rounded-2 searchboxselect" aria-label="Select category" id="display_categorynav">
+                               <%
+
+                               %>
                             </select>
                         </div>
                         <div class="flex-grow-1 mx-1 searchtextinput">
@@ -95,6 +94,23 @@
         </div>
     </div>
 </div>
+
+<script>
+
+    function fetchData() {
+        fetch('display_categoryServlet')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('display_categorynav').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    fetchData();
+
+</script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 

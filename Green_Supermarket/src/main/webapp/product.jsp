@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Title</title>
+    <title>Product details</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -32,11 +32,11 @@
 
 <div class="main-content">
     <div class="container my-5">
-        <div class="row">
+        <div class="row" id="product_details">
             <div class="col-md-5">
                 <div class="main-img">
                     <img class="img-fluid"
-                         src="https://images.unsplash.com/photo-1556843824-2a36847e3173?q=80&w=2576&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                         src="${requestScope.product_image_path}"
                          alt="ProductS">
 
                 </div>
@@ -44,10 +44,10 @@
             <div class="col-md-7">
                 <div class="main-description px-2">
                     <div class="category text-bold mt-2">
-                        Category: Vegetables
+                        Category: ${requestScope.product_category}
                     </div>
                     <div class="product-title text-bold my-3">
-                        Kale
+                        ${requestScope.product_name}
                     </div>
 
 
@@ -55,7 +55,7 @@
                         <p class="old-price mb-1">
                             <del>Rs 220 /=</del>
                             <span class="old-price-discount text-danger">(20% off)</span></p>
-                        <p class="new-price text-bold mb-1">Rs 176 /=</p>
+                        <p class="new-price text-bold mb-1">Rs  ${requestScope.product_price}</p>
                         <p class="text-secondary mb-1">(Additional tax may apply on checkout)</p>
                         <div class="instock">
                             <span>In Stock</span>
@@ -66,9 +66,7 @@
 
 
                     <div class="buttons d-flex my-5">
-                        <div class="block">
-                            <a href="#" class="shadow btn custom-btn ">Wishlist</a>
-                        </div>
+
                         <div class="block">
                             <button class="shadow btn custom-btn">Add to cart</button>
                         </div>
@@ -85,11 +83,7 @@
 
                 <div class="product-details my-4">
                     <p class="details-title text-color mb-1">Product Details</p>
-                    <p class="description">Elevate your culinary experience with our premium Organic Kale, a
-                        nutrient-packed powerhouse that brings freshness and vitality to your meals. Sourced from
-                        certified organic farms, our kale is carefully cultivated to ensure the highest quality and
-                        flavor. Packed with essential vitamins and minerals, it's a versatile and health-conscious
-                        addition to any kitchen </p>
+                    <p class="description"> ${requestScope.product_details} </p>
                 </div>
 
                 <div class="row questions bg-light p-3">
@@ -115,6 +109,10 @@
 
 
             </div>
+
+        </div>
+            </div>
+
         </div>
     </div>
 
@@ -131,7 +129,7 @@
                                 src="https://images.unsplash.com/photo-1633674432402-2f0c8ba69d72?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjM5fHx2ZWdldGFibGVzfGVufDB8fDB8fHww"
                                 class="product-image"></a>
                         <h5 class="card-title"><b>vegitable</b></h5>
-                        <p class="card-text small">Gannawanam ganin naththan nikan hitapan.</p>
+                        <p class="card-text small">#</p>
                         <p class="tags">Price Rs 100 /=</p>
                         <a href="https://api.whatsapp.com/send?phone=2348162667912" target="_blank"
                            class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
@@ -147,7 +145,7 @@
                                 src="https://images.unsplash.com/photo-1533321942807-08e4008b2025?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dmVnZXRhYmxlc3xlbnwwfHwwfHx8MA%3D%3D"
                                 class="product-image"></a>
                         <h5 class="card-title"><b>vegitable</b></h5>
-                        <p class="card-text small">Gannawanam ganin naththan nikan hitapan</p>
+                        <p class="card-text small">#</p>
                         <p class="tags">Price Rs 100 /=</p>
                         <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart"
                                                                            aria-hidden="true"></i> Add to cart</a>
@@ -178,6 +176,7 @@
 <jsp:include page="feedback.jsp"/>
 
 <jsp:include page="footer.jsp"/>
+
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.slim.js"
         integrity="sha512-docBEeq28CCaXCXN7cINkyQs0pRszdQsVBFWUd+pLNlEk3LDlSDDtN7i1H+nTB8tshJPQHS0yu0GW9YGFd/CRg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -188,5 +187,8 @@
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
 
+
+
 </body>
+
 </html>
