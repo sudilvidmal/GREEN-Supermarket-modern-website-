@@ -1,6 +1,8 @@
 package servlets;
 
 import java.io.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.*;
@@ -17,7 +19,28 @@ public class LogOutServlet extends HttpServlet {
             session.invalidate();
         }
 
-        // Redirect to the login page or any other page after logout
-        response.sendRedirect("index.jsp");
+        try{
+
+            Connection conn = dbconnection.getConnection();
+            String tableName = "" + session.getId();
+            //insert query
+            String deletecartquery= "DROP TABLE green_sp_db." + tableName + "";
+            PreparedStatement pre = conn.prepareStatement(deletecartquery);
+
+
+            pre.executeUpdate();
+            System.out.println("Table dropped successfully");
+            response.sendRedirect(request.getContextPath()+"/index.jsp");
+
+            conn.close();
+
+
+        }
+        catch (Exception e){
+            e.printStackTrace();
+        }
+
+
+
     }
 }

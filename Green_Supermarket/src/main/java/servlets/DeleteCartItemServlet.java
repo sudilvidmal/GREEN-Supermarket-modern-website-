@@ -29,7 +29,8 @@ public class DeleteCartItemServlet extends HttpServlet {
                 int cartId = Integer.parseInt(cartIdString);
 
                 // Perform the deletion in the database
-                deleteCartItem(cartId);
+                HttpSession session = request.getSession();
+                deleteCartItem(session, cartId);
 
                 request.setAttribute("showModal", true);
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/allproduct.jsp");
@@ -45,17 +46,18 @@ public class DeleteCartItemServlet extends HttpServlet {
             response.sendError(HttpServletResponse.SC_BAD_REQUEST, "cartId parameter is missing");
         }
     }
-        private void deleteCartItem(int cartId) {
-            try (Connection conn = dbconnection.getConnection()) {
-                String deleteSql = "DELETE FROM cart_table WHERE item_id = ?";
-                try (PreparedStatement deleteStmt = conn.prepareStatement(deleteSql)) {
-                    deleteStmt.setInt(1, cartId);
-                    deleteStmt.executeUpdate();
-                }
-            } catch (SQLException | ClassNotFoundException e) {
-                e.printStackTrace(); // Log the exception or handle it according to your needs
-                // You might want to throw a custom exception or handle the error in some way
-            }
 
+    private void deleteCartItem(HttpSession session, int cartId) {
+        String tableName = "" + session.getId();
+        try (Connection conn = dbconnection.getConnection()) {
+            String deleteSql = "DELETE FROM " + tableName + " WHERE item_id = ?";
+            try (PreparedStatement deleteStmt = conn.prepareStatement(deleteSql)) {
+                deleteStmt.setInt(1, cartId);
+                deleteStmt.executeUpdate();
+            }
+        } catch (SQLException | ClassNotFoundException e) {
+            e.printStackTrace(); // Log the exception or handle it according to your needs
+            // You might want to throw a custom exception or handle the error in some way
+        }
     }
 }
