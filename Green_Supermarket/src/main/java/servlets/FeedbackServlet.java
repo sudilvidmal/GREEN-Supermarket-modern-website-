@@ -1,4 +1,4 @@
-package Servlets;
+package servlets;
 
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;

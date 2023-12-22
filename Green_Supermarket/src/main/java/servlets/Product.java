@@ -1,4 +1,4 @@
-package Servlets;
+package servlets;
 
 // Product.java
 public class Product {
