@@ -68,7 +68,7 @@
 
                         <div class="col-12">
                             <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control needs-validation" name="email" id="email" placeholder="you@example.com" required>
+                            <input type="email" class="form-control needs-validation" name="email" id="email" placeholder="example@example.com" required>
                             <div class="invalid-feedback">
                                 Please enter a valid email address for shipping updates.
                             </div>
