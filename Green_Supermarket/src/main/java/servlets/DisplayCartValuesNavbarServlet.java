@@ -9,23 +9,31 @@ import jakarta.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
-
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+
 import com.google.gson.JsonObject;
+import jakarta.servlet.http.HttpSession;
+
 @WebServlet(name = "DisplayCartValuesNavbarServlet", value = "/DisplayCartValuesNavbarServlet")
 public class DisplayCartValuesNavbarServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("application/json"); // Set content type to JSON
         PrintWriter out = response.getWriter();
 
+        // Retrieve the session
+        HttpSession session = request.getSession();
+
         try (Connection conn = dbconnection.getConnection()) {
-            String summarySql = "SELECT COUNT(item_id) AS item_count2, SUM(product_price) AS total_price2 FROM green_sp_db.cart_table";
+
+            String tableName = "" + session.getId();
+
+            String summarySql = "SELECT COUNT(item_id) AS item_count2, SUM(product_price) AS total_price2 FROM green_sp_db." + tableName + "";
 
             try (Statement summaryStmt = conn.createStatement();
-
                  ResultSet summaryRs = summaryStmt.executeQuery(summarySql)) {
 
                 int itemCount2 = 0;

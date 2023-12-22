@@ -48,8 +48,6 @@ public class LoginServlet extends HttpServlet {
                         System.out.println("Login Successful");
 
 
-
-
                     } else {
                         // Authentication failed
                         response.getWriter().println("<script>alert('Login Failed!'); window.location.href='index.jsp';</script>");

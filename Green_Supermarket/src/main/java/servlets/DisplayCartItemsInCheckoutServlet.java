@@ -5,22 +5,31 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.*;
-import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
 
 @WebServlet(name = "DisplayCartItemsInCheckoutServlet", value = "/DisplayCartItemsInCheckoutServlet")
 public class DisplayCartItemsInCheckoutServlet extends HttpServlet {
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
+        // Retrieve the session
+        HttpSession session = request.getSession();
+
         try (Connection conn = dbconnection.getConnection()) {
+
+            String tableName = "" + session.getId();
             // SQL query to get cart items
-            String cartSql = "SELECT item_id, product_name, product_price FROM green_sp_db.cart_table";
+            String cartSql = "SELECT item_id, product_name, product_price FROM green_sp_db." + tableName + "";
 
             // Execute the query to get cart items
             try (Statement cartStmt = conn.createStatement(); ResultSet cartRs = cartStmt.executeQuery(cartSql)) {

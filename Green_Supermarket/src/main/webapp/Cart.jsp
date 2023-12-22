@@ -83,23 +83,53 @@
 <script>
 
     function fetchDataCart() {
-        fetch('DisplayCartServlet')
+        // Create an object to store options for the fetch request
+        const options = {
+            method: 'POST', // Set the HTTP method to POST
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded', // Adjust the content type if needed
+            },
+            // Add any additional headers if necessary
+
+            // Add the request body if you need to send data with the POST request
+            // body: 'key1=value1&key2=value2'
+        };
+
+        // Make the fetch request with the specified options
+        fetch('DisplayCartServlet', options)
             .then(response => response.text())
             .then(data => {
+                // Handle the response data as needed
                 document.getElementById('display_cart').innerHTML = data;
             })
             .catch(error => {
+                // Handle errors
                 console.error('Error:', error);
             });
     }
 
     function fetchDataCartItems() {
-        fetch('DisplayCartItemsPriceServlet')
+        // Create an object to store options for the fetch request
+        const options = {
+            method: 'POST', // Set the HTTP method to POST
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded', // Adjust the content type if needed
+            },
+            // Add any additional headers if necessary
+
+            // Add the request body if you need to send data with the POST request
+            // body: 'key1=value1&key2=value2'
+        };
+
+        // Make the fetch request with the specified options
+        fetch('DisplayCartItemsPriceServlet', options)
             .then(response => response.text())
             .then(data => {
+                // Handle the response data as needed
                 document.getElementById('display_cart_items').innerHTML = data;
             })
             .catch(error => {
+                // Handle errors
                 console.error('Error:', error);
             });
     }
