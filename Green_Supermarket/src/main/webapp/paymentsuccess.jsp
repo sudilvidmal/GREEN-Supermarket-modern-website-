@@ -80,7 +80,7 @@
 
     function sendEmail() {
         var xhr = new XMLHttpRequest();
-        var mail = 'asiri.karunachandra@gmail.com'; // Replace with the actual recipient's email
+        var mail = document.getElementById('sendmail').value; // get the id of the textbox value and replace it with 'sendmail'
         xhr.open('POST', 'SendEmail', true); // Adjust the URL to match your servlet mapping
         xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
         xhr.onreadystatechange = function () {
