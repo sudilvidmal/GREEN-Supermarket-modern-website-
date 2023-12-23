@@ -1,9 +1,5 @@
-package servlets;
+package Servlets;
 
-import java.io.*;
-
-import jakarta.servlet.http.*;
-import jakarta.servlet.annotation.*;
 import java.io.IOException;
 import java.sql.*;
 import jakarta.servlet.annotation.WebServlet;
@@ -11,7 +7,6 @@ import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
-import java.io.IOException;
 
 @WebServlet("/loginservlet")
 public class LoginServlet extends HttpServlet {
@@ -23,6 +18,9 @@ public class LoginServlet extends HttpServlet {
 
         String password = request.getParameter("upassword");
 
+
+        HttpSession session = request.getSession();
+        session.setAttribute("sessionuseremail", email);
 
 
         try {
@@ -39,7 +37,7 @@ public class LoginServlet extends HttpServlet {
                         int customerId = resultSet.getInt("customer_id");
 
                         // Create or retrieve the session
-                        HttpSession session = request.getSession();
+                        session = request.getSession();
 
                         // Store customer_id in the session
                         session.setAttribute("sessionuserid", customerId);

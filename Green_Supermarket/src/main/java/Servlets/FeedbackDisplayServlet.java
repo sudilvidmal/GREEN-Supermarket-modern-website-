@@ -1,4 +1,4 @@
-package servlets;
+package Servlets;
 
 import java.io.*;
 import java.sql.*;
@@ -6,31 +6,29 @@ import java.sql.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 
-@MultipartConfig
-@WebServlet(name = "display_categoryallproduct", value = "/display_categoryallproduct")
-public class display_categoryallproduct extends HttpServlet {
+@WebServlet(name = "FeedbackDisplayServlet", value = "/FeedbackDisplayServlet")
+public class FeedbackDisplayServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
         response.setContentType("text/html");
         PrintWriter out = response.getWriter();
 
-
         try {
-
-
 
             Connection conn = dbconnection.getConnection();
 
             Statement stmt = conn.createStatement();
-            String sql = "SELECT category_name FROM category_table";
+            String sql = "SELECT * FROM feedback_table";
             ResultSet rs = stmt.executeQuery(sql);
 
             while (rs.next()) {
-                String categoryName = rs.getString("category_name");
-
-                // Generate HTML dynamically based on the retrieved data
-                out.println("<a href=\"#\"><p class=\"blog-sidebar-list\">" + categoryName + "</p></a>");
+                out.println("<tr>");
+                out.println("<td>" + rs.getInt("feedback_id") + "</td>");
+                out.println("<td>" + rs.getString("customer_id") + "</td>");
+                out.println("<td>" + rs.getString("comment") + "</td>");
+                out.println("<td>" + rs.getString("rating") + "</td>");
+                out.println("</tr>");
             }
             rs.close();
             stmt.close();
@@ -41,6 +39,7 @@ public class display_categoryallproduct extends HttpServlet {
             e.printStackTrace();
         }
     }
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
 
