@@ -43,6 +43,9 @@
                         <strong><span id="totalPrice">Rs. 0.00</span></strong>
                     </li>
                 </ul>
+                <form action="CancelOrderMail" method="post" id="cancelOrderForm">
+                    <button type="submit" class="btn btn-success mt-2" id="btncancelorder">Cancel Order</button>
+                </form>
 
             </div>
 

@@ -1,4 +1,4 @@
-package servlets;
+package Servlets;
 
 import java.io.File;
 import java.io.FileOutputStream;

@@ -55,8 +55,14 @@
             </div>
 
             <div class="loginbtn">
-                <div> <jsp:include page="modalreglog.jsp"/> </div>
+                <% if (session.getAttribute("userLoggedIn") != null) { %>
+                <%-- If the user is logged in, show the "Sign Out" button --%>
+                <button class="glow-on-hover" onclick="logoutUser()">Sign Out</button>
+                <% } else { %>
+                <%-- If the user is not logged in, show the "Sign Up" button --%>
+                <jsp:include page="modalreglog.jsp"/>
                 <button class="glow-on-hover" data-bs-toggle="modal" data-bs-target="#staticBackdropLogReg" type="button">Sign up</button>
+                <% } %>
             </div>
         </div>
     </div>
@@ -129,6 +135,23 @@
                 console.error("Error fetching cart data: " + error);
             }
         });
+
+        // Function to handle user logout
+        function logoutUser() {
+            fetch('logout') // URL should match the servlet mapping
+                .then(response => {
+                    if (response.ok) {
+                        // Redirect to the login page after successful logout
+                        window.location.href = 'index.jsp';
+                    } else {
+                        throw new Error('Logout failed');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    // Handle errors here (e.g., show an error message to the user)
+                });
+        }
 
 </script>
 </body>
