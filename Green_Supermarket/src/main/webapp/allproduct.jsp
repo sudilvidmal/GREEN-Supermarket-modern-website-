@@ -40,10 +40,10 @@
                 <h2 class="blog-sidebar-title"><b>Categories</b></h2>
                 <hr/>
                 <div id="display_category">
-                <%
+                    <%
 
-                %>
-            </div>
+                    %>
+                </div>
 
             </div>
 
@@ -55,14 +55,24 @@
                     </div>
 
                     <div class="col">
-                        <select class="form-control custom-select">
-                            <option value="">Default Sorting</option>
-                            <option value="popularity">Sorting by popularity</option>
-                            <option value="average">Sorting by average</option>
-                            <option value="latest">Sorting by latest</option>
-                            <option value="low">Sorting by low</option>
-                            <option value="high">Sorting by high</option>
-                        </select>
+                        <div class="d-flex justify-content-evenly">
+
+
+                            <div class="flex-grow-1 mx-1 searchtextinput">
+                                <form id="searchForm" onsubmit="searchProduct(); return false;">
+                                    <input type="search" id="productName" name="productName" placeholder="Green apple"
+                                           class="form-control rounded-2">
+                                </form>
+                            </div>
+                            <div class="flex-grow-1 mx-1">
+                                <button id="searchButton" type="button"
+                                        class="btn btn-warning text-white rounded-2 w-100" onclick="searchProduct()">
+                                    Search
+                                </button>
+                            </div>
+
+
+                        </div>
                     </div>
 
                 </div>
@@ -71,13 +81,10 @@
                 <div class="row" id="display_cardproduct">
 
 
-
                     <%
-                        // Placeholder for data retrieved from Servlet
-                        // This will be replaced by actual data from the servlet
+
 
                     %>
-
 
 
                 </div>
@@ -102,28 +109,7 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
-  
 
-<script>
-
-    function fetchProductData() {
-
-        fetch('display_productCardServlet') // Update the servlet name
-            .then(response => response.text())
-            .then(data => {
-                document.getElementById('display_cardproduct').innerHTML = data;
-            })
-            .catch(error => {
-                console.error('Error:', error);
-            });
-    }
-
-    window.onload = function () {
-        fetchProductData();
-        fetchCategoryData(); // Call the correct function
-    };
-
-</script>
 
 <script>
     function fetchCategoryData() {
@@ -137,14 +123,67 @@
             });
     }
 
-        // Check if showModal attribute is set
-        <% if (request.getAttribute("showModal") != null && (Boolean) request.getAttribute("showModal")) { %>
-        $(document).ready(function(){
-        // Open Bootstrap modal
+
+    <% if (request.getAttribute("showModal") != null && (Boolean) request.getAttribute("showModal")) { %>
+    $(document).ready(function () {
+
         $('#Cart').modal('show');
     });
-        <% } %>
+    <% } %>
 
+</script>
+
+
+<script>
+    function fetchCategoryProducts(category) {
+        fetch('display_category_products?category=' + category)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('display_cardproduct').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    function fetchProductData() {
+
+        // ...
+        fetch('display_productCardServlet')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('display_cardproduct').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    window.onload = function () {
+        fetchProductData();
+        fetchCategoryData();
+    };
+</script>
+
+
+<script>
+    function searchProduct() {
+        var productName = document.getElementById('productName').value;
+        fetch('searchProductServlet', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded',
+            },
+            body: 'productName=' + encodeURIComponent(productName),
+        })
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('display_cardproduct').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
 </script>
 
 

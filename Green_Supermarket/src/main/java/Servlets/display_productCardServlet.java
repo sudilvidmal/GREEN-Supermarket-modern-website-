@@ -37,9 +37,9 @@ public class display_productCardServlet extends HttpServlet {
 
                     String imageURL = request.getContextPath() + "/" + rs.getString("product_image_path");
 
-                    out.println("<form action=\"AddToCartServlet\" method=\"post\">"); // Start of the form
+                    out.println("<form action=\"AddToCartServlet\" method=\"post\">");
 
-                    // Hidden input field to store the product_id
+
                     out.println("<input type=\"hidden\" name=\"productId\" value=\"" + rs.getInt("product_id") + "\">");
 
 
@@ -54,7 +54,7 @@ public class display_productCardServlet extends HttpServlet {
                     out.println("<button type=\"submit\" class=\"btn btn-success button-text\">"
                             + "<i class=\"fa fa-shopping-cart\" aria-hidden=\"true\"></i> Add to cart</button>");
 
-                    out.println("</form>"); // End of the form
+                    out.println("</form>");
 
                     out.println("</div>");
                     out.println("</div>");

@@ -63,115 +63,20 @@
             <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active" data-bs-interval="5000">
-                        <div class="row">
-                            <div class="col-lg-3 card-items p-4">
-                                <div class="card shadow mx-auto">
-                                    <img src="images/latest-product/6.webp" class="card-img-top" alt="...">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">Avocado</h5>
-                                        <p class="card-text">Creamy and nutritious, our ripe avocados are perfect for
-                                            salads, spreads, or a healthy snack.</p>
-                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i>
-                                            Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row" id="display_homeproductServlet">
+                           <%
 
-                            <div class="col-lg-3 card-items p-4">
-                                <div class="card shadow mx-auto">
-                                    <img src="images/latest-product/8.webp" class="card-img-top" alt="...">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">Dark Chocolate Bars</h5>
-                                        <p class="card-text">Fair-trade sourced for guilt-free satisfaction with every
-                                            heavenly bite.</p>
-                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i>
-                                            Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 card-items p-4">
-                                <div class="card shadow mx-auto">
-                                    <img src="images/latest-product/4.webp" class="card-img-top" alt="...">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">Vibrant Olives</h5>
-                                        <p class="card-text">Savor the taste of our plump, brine-cured olives. Perfect
-                                            for salads or appetizers.</p>
-                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i>
-                                            Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 card-items p-4">
-                                <div class="card shadow mx-auto" style="">
-                                    <img src="images/latest-product/2.webp" class="card-img-top" alt="...">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">Extra Virgin Olive Oil</h5>
-                                        <p class="card-text">Premium, cold-pressed olive oil—crafted for its rich flavor
-                                            and health benefits.</p>
-                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i>
-                                            Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
+                           %>
                         </div>
                     </div>
 
 
                     <div class="carousel-item" data-bs-interval="5000">
-                        <div class="row">
-                            <div class="col-lg-3 card-items p-4">
-                                <div class="card shadow mx-auto" style="">
-                                    <img src="images/latest-product/1.webp" class="card-img-top" alt="...">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">Whole Grain Bread</h5>
-                                        <p class="card-text">Satisfy your cravings with our hearty whole-grain bread -
-                                            Perfect slice every time.</p>
-                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i>
-                                            Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
+                        <div class="row" id="display_homeproductServlet2">
+                            <%
 
-                            <div class="col-lg-3 card-items p-4">
-                                <div class="card shadow mx-auto" style="">
-                                    <img src="images/latest-product/5.webp" class="card-img-top" alt="...">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">Free-Range Eggs</h5>
-                                        <p class="card-text">Enjoy the rich, golden yolks of our free-range eggs—sourced
-                                            from local farms .</p>
-                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i>
-                                            Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
+                            %>
 
-                            <div class="col-lg-3 card-items p-4">
-                                <div class="card shadow mx-auto" style="">
-                                    <img src="images/latest-product/7.webp" class="card-img-top" alt="...">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">Organic Yogurt</h5>
-                                        <p class="card-text">Indulge in the velvety texture of our organic
-                                            yogurt—perfect for breakfast or snacks.</p>
-                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i>
-                                            Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="col-lg-3 card-items p-4">
-                                <div class="card shadow mx-auto" style="">
-                                    <img src="images/latest-product/3.webp" class="card-img-top" alt="...">
-                                    <div class="card-body text-center">
-                                        <h5 class="card-title">Arabica Coffee Beans</h5>
-                                        <p class="card-text">Awaken your senses with our premium Arabica coffee
-                                            beans—sourced and expertly roasted.</p>
-                                        <a href="#" class="btn btn-warning"><i class="fa-solid fa-cart-shopping"></i>
-                                            Add to cart</a>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -181,21 +86,27 @@
 </main>
 <div class="container-fluid pb-2 pt-5 " >
 
+    <div class="text-center pt-5 container">
+        <h1>Our <span style="color: #109E28; font-weight: 600;">Food</span> Corner</h1>
+        <h5>
+            Discover unparalleled flavor at our supermarket food store – where the tastiest delights await!</h5>
+        <hr class="mx-auto" style="width: 50%;">
+    </div>
 
-    <div class="row  g-2 mx-auto">
+    <div class="row  g-2 mx-auto pt-4">
         <div class=" col-sm-12 col-md-12 col-lg-4 pb-2">
-            <a href="index.jsp"> <div class="card text-white card1 img-fluid ">
-                 <img src="images/snacks.webp" class="card-img" alt="img" style="width: auto; height: 509px">
+            <a href="foodcorner_friedrice.jsp"> <div class="card text-white card1 img-fluid ">
+                 <img src="images/christopher-alvarenga-rQX9eVpSFz8-unsplash.jpg" class="card-img" alt="img" style="width: auto; height: 509px">
                 <div class="card-img-overlay">
-                    <h5 class="card-title">SNACKS</h5>
+                    <h5 class="card-title">Fried Rice</h5>
                 </div>
             </div></a>
         </div>
         <div class="col-sm-12 col-md-12 col-lg-4 pb-2">
-            <a href="index.jsp"> <div class="card text-white card2 img-fluid">
-                <img src="images/snacks.webp" class="card-img" alt="img" style="width: auto; height: 509px">
+            <a href="foodcorner_kottu.jsp"> <div class="card text-white card2 img-fluid">
+                <img src="images/kottu-6319363_1920.jpg" class="card-img" alt="img" style="width: auto; height: 509px">
                 <div class="card-img-overlay">
-                    <h5 class="card-title">SNACKS</h5>
+                    <h5 class="card-title">Kottu</h5>
                 </div>
             </div></a>
         </div>
@@ -203,18 +114,18 @@
         <div class="col-sm-12 col-md-12 col-lg-4 ">
             <div class="row mb-2 g-2 smalltile-row">
                 <div class="col-6">
-                    <a href="index.jsp"> <div class="card text-white card3 img-fluid">
-                        <img src="images/snacks.webp" class="card-img" alt="img" style="height: 250px">
+                    <a href="foodcorner_Biryani.jsp"> <div class="card text-white card3 img-fluid">
+                        <img src="images/shreyak-singh-0j4bisyPo3M-unsplash.jpg" class="card-img" alt="img" style="height: 250px">
                         <div class="card-img-overlay">
-                            <h5 class="card-title">SNACKS</h5>
+                            <h5 class="card-title">Biryani</h5>
                         </div>
                     </div></a>
                 </div>
                 <div class="col-6">
-                    <a href="index.jsp"> <div class="card text-white card4">
-                        <img src="images/snacks.webp" class="card-img" alt="img" style="height: 250px">
+                    <a href="foodcorner_bakery.jsp"> <div class="card text-white card4">
+                        <img src="images/mohamed-hassouna-N4gtuEZ5gWc-unsplash.jpg" class="card-img" alt="img" style="height: 250px">
                         <div class="card-img-overlay">
-                            <h5 class="card-title">SNACKS</h5>
+                            <h5 class="card-title">Bakery Products</h5>
                         </div>
                     </div></a>
                 </div>
@@ -223,18 +134,18 @@
 
             <div class="row smalltile-row g-2" >
                 <div class="col-6" >
-                    <a href="index.jsp"> <div class="card text-white card5">
-                        <img src="images/snacks.webp" class="card-img" alt="img"style="height: 250px" >
+                    <a href="foodcorner_burgers.jsp"> <div class="card text-white card5">
+                        <img src="images/mae-mu-I7A_pHLcQK8-unsplash.jpg" class="card-img" alt="img"style="height: 250px" >
                         <div class="card-img-overlay">
-                            <h5 class="card-title">SNACKS</h5>
+                            <h5 class="card-title">Burgers </h5>
                         </div>
                     </div></a>
                 </div>
                 <div class="col-6">
-                    <a href="index.jsp"> <div class="card text-white card6">
-                        <img src="images/snacks.webp" class="card-img" alt="img"style="height: 250px">
+                    <a href="foodcorner_TraditionalSriLankan%20Food.jsp"> <div class="card text-white card6">
+                        <img src="images/9248cb0d-8d44-4070-a68f-5df9dcffe955-scaled.jpeg" class="card-img" alt="img"style="height: 250px">
                         <div class="card-img-overlay">
-                            <h5 class="card-title">SNACKS</h5>
+                            <h5 class="card-title">Traditional Sri Lankan Food</h5>
                         </div>
                     </div></a>
                 </div>
@@ -259,6 +170,29 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
         integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
         crossorigin="anonymous"></script>
+<script>
+    function fetchProductData() {
+        fetch('display_homeproductServlet')
+            .then(response => response.text())
+            .then(data => {
+
+                const [carousel1Data, carousel2Data] = data.split('<!-- SPLIT HERE -->');
+
+
+                document.getElementById('display_homeproductServlet').innerHTML = carousel1Data;
+                document.getElementById('display_homeproductServlet2').innerHTML = carousel2Data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    window.onload = function () {
+        fetchProductData();
+    };
+
+
+</script>
 
 </body>
 </html>
