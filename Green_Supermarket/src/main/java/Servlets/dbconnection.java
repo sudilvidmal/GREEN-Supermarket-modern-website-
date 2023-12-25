@@ -1,4 +1,4 @@
-package Servlets;
+package servlets;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -11,8 +11,7 @@ public class dbconnection {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/green_sp_db", "root", "siri");
-
+            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/green_sp_db", "root", "80297080aA");
             System.out.println("Connection Succeed!");
 
         } catch (SQLException ex) {

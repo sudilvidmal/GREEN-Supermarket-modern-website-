@@ -121,52 +121,10 @@
         <hr>
         <p class="display-5">Similar Products</p>
 
-        <div class="row">
-            <div class="col-sm-3 col-md-6 col-lg-4">
-                <div class="card mt-3">
-                    <div class="card-body text-center">
-                        <a href="product.jsp"><img
-                                src="https://images.unsplash.com/photo-1633674432402-2f0c8ba69d72?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MjM5fHx2ZWdldGFibGVzfGVufDB8fDB8fHww"
-                                class="product-image"></a>
-                        <h5 class="card-title"><b>vegitable</b></h5>
-                        <p class="card-text small">#</p>
-                        <p class="tags">Price Rs 100 /=</p>
-                        <a href="https://api.whatsapp.com/send?phone=2348162667912" target="_blank"
-                           class="btn btn-success button-text"><i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                            Add to cart</a>
-                    </div>
-                </div>
-            </div>
+        <div class="row" id="display_similarproduct">
+            <%
 
-            <div class="col-sm-3 col-md-6 col-lg-4">
-                <div class="card mt-3">
-                    <div class="card-body text-center">
-                        <a href="product.jsp"> <img
-                                src="https://images.unsplash.com/photo-1533321942807-08e4008b2025?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8dmVnZXRhYmxlc3xlbnwwfHwwfHx8MA%3D%3D"
-                                class="product-image"></a>
-                        <h5 class="card-title"><b>vegitable</b></h5>
-                        <p class="card-text small">#</p>
-                        <p class="tags">Price Rs 100 /=</p>
-                        <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart"
-                                                                           aria-hidden="true"></i> Add to cart</a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-sm-3 col-md-6 col-lg-4">
-                <div class="card mt-3">
-                    <div class="card-body text-center">
-                        <a href="product.jsp"> <img
-                                src="https://images.unsplash.com/photo-1582284540020-8acbe03f4924?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NDh8fHZlZ2V0YWJsZXN8ZW58MHx8MHx8fDA%3D"
-                                class="product-image"></a>
-                        <h5 class="card-title"><b>vegitable</b></h5>
-                        <p class="card-text small">Gannawanam ganin naththan nikan hitapan.</p>
-                        <p class="tags">Price Rs 100 /=</p>
-                        <a href="#" class="btn btn-success button-text"><i class="fa fa-shopping-cart"
-                                                                           aria-hidden="true"></i> Add to cart</a>
-                    </div>
-                </div>
-            </div>
+            %>
 
 
         </div>
@@ -188,7 +146,26 @@
         crossorigin="anonymous"></script>
 
 
+<script>
+    function fetchProductData() {
+        var productId = "${requestScope.product_id}";  // Assuming you have product_id in your request scope
+        var category = "${requestScope.product_category}";
 
+        fetch('display_similarproduct?productId=' + productId + '&category=' + category)
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('display_similarproduct').innerHTML = data;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+
+    window.onload = function () {
+        fetchProductData();
+    };
+
+</script>
 </body>
 
 </html>

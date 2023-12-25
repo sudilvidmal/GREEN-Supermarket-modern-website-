@@ -39,9 +39,7 @@
                 </li>
 
                 <li class="nav-item">
-
-                    <a class="nav-link" href="#mailModal" data-bs-toggle="modal" data-bs-target="#mailModal">Search <i
-                            class="fa-solid fa-magnifying-glass"></i></a>
+                    <a class="nav-link" href="aboutus.jsp">About Us</a>
                 </li>
             </ul>
 
@@ -68,38 +66,7 @@
     </div>
 </nav>
 
-<div class="modal fade" tabindex="-1" role="dialog" id="mailModal">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content borer-top border-warning">
-            <div class="modal-body text-center">
-                <div class="mt-4 py-2">
-                    <h4 class="h5">What are you looking for?</h4>
-                    <p class="px-4 pb-0 mb-1 text-secondary">We have the finest and freshest!</p>
-                </div>
-                <div class="p-3">
-                    <div class="d-flex justify-content-evenly">
 
-                        <div class="flex-grow-1 mx-1">
-                            <select class="form-select rounded-2 searchboxselect" aria-label="Select category" id="display_categorynav">
-                               <%
-
-                               %>
-                            </select>
-                        </div>
-                        <div class="flex-grow-1 mx-1 searchtextinput">
-                            <input type="search" placeholder="Green apple" class="form-control rounded-2 ">
-                        </div>
-                        <div class="flex-grow-1 mx-1">
-                            <button type="button" class="btn btn-warning text-white rounded-2 w-100">Search</button>
-                        </div>
-                    </div>
-                </div>
-                <a type="button" class="text-secondary rounded-2 w-100" data-bs-dismiss="modal"><small>I don't want to
-                    search, just explore</small></a>
-            </div>
-        </div>
-    </div>
-</div>
 
 <script>
 
@@ -127,7 +94,7 @@
             method: "GET",
             dataType: "json",
             success: function (data) {
-                // Update the item count and total price in the respective elements
+                
                 $("#itemCountSpan").text(data.itemCount2);
                 $("#totalPriceSpan").text("Rs. " + data.totalPrice2.toFixed(2));
             },

@@ -79,5 +79,7 @@ public class Product {
     public void setProductStock(int productStock) {
         this.productStock = productStock;
     }
+
+
 }
 
