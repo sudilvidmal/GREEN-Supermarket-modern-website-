@@ -11,8 +11,9 @@ public class dbconnection {
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
 
-            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/green_sp_db", "root", "Xlk0#knk");
 
+            connection = DriverManager.getConnection("jdbc:mysql://127.0.0.1:3306/green_sp_db", "root", "Xlk0#knk");
+          
             System.out.println("Connection Succeed!");
 
         } catch (SQLException ex) {

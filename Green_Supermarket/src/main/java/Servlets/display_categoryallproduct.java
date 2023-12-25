@@ -29,8 +29,10 @@ public class display_categoryallproduct extends HttpServlet {
             while (rs.next()) {
                 String categoryName = rs.getString("category_name");
 
-                // Generate HTML dynamically based on the retrieved data
-                out.println("<a href=\"#\"><p class=\"blog-sidebar-list\">" + categoryName + "</p></a>");
+
+                out.println("<a href=\"javascript:void(0);\" onclick=\"fetchCategoryProducts('" + categoryName + "');\">" +
+                        "<p class=\"blog-sidebar-list\">" + categoryName + "</p></a>");
+
             }
             rs.close();
             stmt.close();
