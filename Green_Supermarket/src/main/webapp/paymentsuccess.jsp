@@ -29,7 +29,6 @@
             <h1>Your Order Has Been Received</h1>
             <h3>Thank you for your payment, it’s processing</h3>
 
-            <p>Your order # is: 100000023</p>
             <p>You will receive an order confirmation email with details of your order.</p>
 
             <div id="countdown" class="mb-3"></div>
@@ -74,26 +73,9 @@
             updateCountdown();
         }, 500);
     });
-    document.addEventListener('DOMContentLoaded', function () {
-        sendEmail();
-    });
 
-    function sendEmail() {
-        var xhr = new XMLHttpRequest();
-        var mail = document.getElementById('sendmail').value; // get the id of the textbox value and replace it with 'sendmail'
-        xhr.open('POST', 'SendEmail', true); // Adjust the URL to match your servlet mapping
-        xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-        xhr.onreadystatechange = function () {
-            if (xhr.readyState === XMLHttpRequest.DONE) {
-                if (xhr.status === 200) {
-                    console.log('Email sent successfully.');
-                } else {
-                    console.error('Error sending email.');
-                }
-            }
-        };
-        xhr.send('mail=' + encodeURIComponent(mail)); // Send email as a parameter
-    }
+
+
 </script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
         integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"

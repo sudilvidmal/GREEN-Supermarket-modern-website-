@@ -18,7 +18,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>product</title>
+    <title>Inventory</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
 
@@ -26,51 +26,11 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
     <link href="dashboardassets/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="icon" type="image/x-icon" href="assets/faviconcirc.png">
     <style>
-        .form-control:focus {
-            box-shadow: none;
-        }
-
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-
-        .b-example-divider {
-            width: 100%;
-            height: 3rem;
-            background-color: rgba(0, 0, 0, .1);
-            border: solid rgba(0, 0, 0, .15);
-            border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-        }
-
-        .b-example-vr {
-            flex-shrink: 0;
-            width: 1.5rem;
-            height: 100vh;
-        }
-
         .bi {
             vertical-align: -.125em;
             fill: currentColor;
-        }
-
-        .nav-scroller {
-            position: relative;
-            z-index: 2;
-            height: 2.75rem;
-            overflow-y: hidden;
         }
 
         .nav-scroller .nav {
@@ -151,19 +111,8 @@
 </svg>
 
 <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#"><img
-            src="images/green-supermarket-high-resolution-logo-transparent.png" class="w-100" alt=""/></a>
 
     <ul class="navbar-nav flex-row d-md-none">
-        <li class="nav-item text-nowrap">
-            <button class="nav-link px-3 text-white" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false"
-                    aria-label="Toggle search">
-                <svg class="bi">
-                    <use xlink:href="#search"/>
-                </svg>
-            </button>
-        </li>
         <li class="nav-item text-nowrap">
             <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
@@ -174,10 +123,6 @@
             </button>
         </li>
     </ul>
-
-    <div id="navbarSearch" class="navbar-search w-100 collapse">
-        <input class="form-control w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
-    </div>
 </header>
 
 <div class="container-fluid">
@@ -233,15 +178,7 @@
 
                     <ul class="nav flex-column mb-auto">
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="#">
-                                <svg class="bi">
-                                    <use xlink:href="#gear-wide-connected"/>
-                                </svg>
-                                Settings
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="#">
+                            <a class="nav-link d-flex align-items-center gap-2" href="AdminLogoutServlet">
                                 <svg class="bi">
                                     <use xlink:href="#door-closed"/>
                                 </svg>
@@ -310,7 +247,6 @@
                             <th>Price</th>
                             <th>Stock</th>
 
-
                         </tr>
                         </thead>
                         <tbody id="display_product">
@@ -321,42 +257,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="table-responsive mt-5">
-                    <table class="table table-bordered">
-                        <thead>
-                        <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">First</th>
-                            <th scope="col">Last</th>
-                            <th scope="col">Handle</th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr>
-                            <th scope="row">1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td colspan="2">Larry the Bird</td>
-                            <td>@twitter</td>
-                        </tr>
-                        </tbody>
-                    </table>
-                </div>
             </div>
-
-
-            <h2>Latest Orders</h2>
-
         </main>
     </div>
 </div>

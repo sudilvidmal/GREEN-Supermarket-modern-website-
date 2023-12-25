@@ -49,7 +49,7 @@
                 <ul>
                     <jsp:include page="Cart.jsp"/>
 
-                    <li><a href="" data-bs-toggle="modal" data-bs-target="#Cart"><i class="fa fa-shopping-bag"></i> <span id="itemCountSpan">0</span></a></li>
+                    <li><a href="" data-bs-toggle="modal" data-bs-target="#Cart"><i class="fa fa-shopping-bag"></i><span id="itemCountSpan">0</span></a></li>
                 </ul>
                 <div class="header__cart__price">Total: <span id="totalPriceSpan">Rs. 0.00</span></div>
             </div>
@@ -154,5 +154,6 @@
         }
 
 </script>
+
 </body>
 </html>

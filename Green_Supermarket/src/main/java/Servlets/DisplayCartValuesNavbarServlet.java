@@ -1,4 +1,4 @@
-package Servlets;
+package servlets;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -55,7 +55,7 @@ public class DisplayCartValuesNavbarServlet extends HttpServlet {
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
             // Log the exception or handle it appropriately
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error fetching product data");
+//            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error fetching product data");
         }
     }
 

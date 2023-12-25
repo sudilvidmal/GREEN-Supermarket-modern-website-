@@ -1,4 +1,4 @@
-package Servlets;
+package servlets;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -35,7 +35,9 @@ public class AddToCartServlet extends HttpServlet {
             // Redirect back to the product page or wherever you want
             response.sendRedirect(request.getContextPath() + "/allproduct.jsp?productId=" + productId);
         }else {
-            response.sendRedirect(request.getContextPath() + "/index.jsp");
+
+            response.getWriter().println(
+                    "<script>alert('You must be logged in to add products to your cart!'); window.location.href = 'index.jsp';</script>");
         }
     }
 

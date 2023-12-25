@@ -14,7 +14,7 @@
     <script src="dashboardassets/js/color-modes.js"></script>
 
 
-    <title></title>
+    <title>Feedbacks</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
 
@@ -22,12 +22,8 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
     <link href="dashboardassets/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="icon" type="image/x-icon" href="assets/faviconcirc.png">
     <style>
-
-        .form-control:focus {
-            box-shadow: none;
-        }
 
         .bi {
             vertical-align: -.125em;
@@ -101,19 +97,8 @@
 </svg>
 
 <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#"><img
-            src="images/green-supermarket-high-resolution-logo-transparent.png" class="w-100" alt=""/></a>
 
     <ul class="navbar-nav flex-row d-md-none">
-        <li class="nav-item text-nowrap">
-            <button class="nav-link px-3 text-white" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false"
-                    aria-label="Toggle search">
-                <svg class="bi">
-                    <use xlink:href="#search"/>
-                </svg>
-            </button>
-        </li>
         <li class="nav-item text-nowrap">
             <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
@@ -124,10 +109,6 @@
             </button>
         </li>
     </ul>
-
-    <div id="navbarSearch" class="navbar-search w-100 collapse">
-        <input class="form-control w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
-    </div>
 </header>
 
 <div class="container-fluid">
@@ -151,14 +132,6 @@
                             </a>
                         </li>
 
-                        <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="order.jsp">
-                                <svg class="bi">
-                                    <use xlink:href="#file-earmark"/>
-                                </svg>
-                                Orders
-                            </a>
-                        </li>
                         <li class="nav-item">
                             <a class="nav-link d-flex align-items-center gap-2" href="productduplicate.jsp">
                                 <svg class="bi">
@@ -191,15 +164,7 @@
 
                     <ul class="nav flex-column mb-auto">
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="#">
-                                <svg class="bi">
-                                    <use xlink:href="#gear-wide-connected"/>
-                                </svg>
-                                Settings
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="adminlogin.jsp">
+                            <a class="nav-link d-flex align-items-center gap-2" href="AdminLogoutServlet">
                                 <svg class="bi">
                                     <use xlink:href="#door-closed"/>
                                 </svg>
@@ -215,17 +180,6 @@
             <div class=" justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 
                 <h1 class="h2">Feedback</h1>
-                <div class="row">
-                    <div class="col-6 pt-3">
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </div>
-
-
-                </div>
-
 
                 <div class="table-responsive mt-5">
                     <table border="1" class="table table-hover table-bordered">
@@ -248,7 +202,9 @@
                     </table>
                 </div>
             </div>
-
+        </main>
+    </div>
+</div>
 <script>
     function fetchData() {
         fetch('FeedbackDisplayServlet')

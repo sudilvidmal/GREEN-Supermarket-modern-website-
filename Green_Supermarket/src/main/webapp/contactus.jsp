@@ -58,23 +58,23 @@
             </ul>
         </div>
         <div class="form-wrap">
-            <form action="#" method="POST">
+            <form action="ContactUsServlet" method="POST">
                 <h2 class="form-title">Send us a message</h2>
                 <div class="form-fields">
                     <div class="form-form">
-                        <input type="text" class="fname" placeholder="First Name">
+                        <input type="text" class="fname" name="name" placeholder="First Name" required>
                     </div>
                     <div class="form-form">
-                        <input type="text" class="lname" placeholder="Last Name">
+                        <input type="text" class="lname" placeholder="Last Name" >
                     </div>
                     <div class="form-form">
-                        <input type="email" class="email" placeholder="Mail">
+                        <input type="email" class="email" name="email" placeholder="Mail" required>
                     </div>
                     <div class="form-form">
-                        <input type="number" class="phone" placeholder="Phone">
+                        <input type="number" class="phone" name="phone" placeholder="Phone" required>
                     </div>
                     <div class="form-form">
-                        <textarea name="message" id="" placeholder="Write your message"></textarea>
+                        <textarea name="message" id="" placeholder="Write your message" required></textarea>
                     </div>
                 </div>
                 <input type="submit" value="Send Message" class="submit-button">
