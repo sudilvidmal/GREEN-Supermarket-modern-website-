@@ -17,58 +17,19 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <title>customer</title>
+    <title>Customer Details</title>
 
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
     <link href="dashboardassets/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <link rel="icon" type="image/x-icon" href="assets/faviconcirc.png">
     <style>
-        .form-control:focus {
-            box-shadow: none;
-        }
-
-        .bd-placeholder-img {
-            font-size: 1.125rem;
-            text-anchor: middle;
-            -webkit-user-select: none;
-            -moz-user-select: none;
-            user-select: none;
-        }
-
-        @media (min-width: 768px) {
-            .bd-placeholder-img-lg {
-                font-size: 3.5rem;
-            }
-        }
-
-        .b-example-divider {
-            width: 100%;
-            height: 3rem;
-            background-color: rgba(0, 0, 0, .1);
-            border: solid rgba(0, 0, 0, .15);
-            border-width: 1px 0;
-            box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-        }
-
-        .b-example-vr {
-            flex-shrink: 0;
-            width: 1.5rem;
-            height: 100vh;
-        }
-
         .bi {
             vertical-align: -.125em;
             fill: currentColor;
         }
 
-        .nav-scroller {
-            position: relative;
-            z-index: 2;
-            height: 2.75rem;
-            overflow-y: hidden;
-        }
 
         .nav-scroller .nav {
             display: flex;
@@ -80,28 +41,6 @@
             white-space: nowrap;
             -webkit-overflow-scrolling: touch;
         }
-
-        .btn-bd-primary {
-            --bd-violet-bg: #712cf9;
-            --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
-
-            --bs-btn-font-weight: 600;
-            --bs-btn-color: var(--bs-white);
-            --bs-btn-bg: var(--bd-violet-bg);
-            --bs-btn-border-color: var(--bd-violet-bg);
-            --bs-btn-hover-color: var(--bs-white);
-            --bs-btn-hover-bg: #6528e0;
-            --bs-btn-hover-border-color: #6528e0;
-            --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-            --bs-btn-active-color: var(--bs-btn-hover-color);
-            --bs-btn-active-bg: #5a23c8;
-            --bs-btn-active-border-color: #5a23c8;
-        }
-
-        .bd-mode-toggle {
-            z-index: 1500;
-        }
-
         .bd-mode-toggle .dropdown-menu .active .bi {
             display: block !important;
         }
@@ -169,19 +108,8 @@
 </svg>
 
 <header class="navbar sticky-top bg-dark flex-md-nowrap p-0 shadow" data-bs-theme="dark">
-    <a class="navbar-brand col-md-3 col-lg-2 me-0 px-3 fs-6 text-white" href="#"><img
-            src="images/green-supermarket-high-resolution-logo-transparent.png" class="w-100" alt=""/></a>
 
     <ul class="navbar-nav flex-row d-md-none">
-        <li class="nav-item text-nowrap">
-            <button class="nav-link px-3 text-white" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSearch" aria-controls="navbarSearch" aria-expanded="false"
-                    aria-label="Toggle search">
-                <svg class="bi">
-                    <use xlink:href="#search"/>
-                </svg>
-            </button>
-        </li>
         <li class="nav-item text-nowrap">
             <button class="nav-link px-3 text-white" type="button" data-bs-toggle="offcanvas"
                     data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false"
@@ -192,10 +120,6 @@
             </button>
         </li>
     </ul>
-
-    <div id="navbarSearch" class="navbar-search w-100 collapse">
-        <input class="form-control w-100 rounded-0 border-0" type="text" placeholder="Search" aria-label="Search">
-    </div>
 </header>
 
 <div class="container-fluid">
@@ -250,16 +174,9 @@
                     <hr class="my-3">
 
                     <ul class="nav flex-column mb-auto">
+
                         <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="#">
-                                <svg class="bi">
-                                    <use xlink:href="#gear-wide-connected"/>
-                                </svg>
-                                Settings
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link d-flex align-items-center gap-2" href="adminlogin.jsp">
+                            <a class="nav-link d-flex align-items-center gap-2" href="AdminLogoutServlet">
                                 <svg class="bi">
                                     <use xlink:href="#door-closed"/>
                                 </svg>
@@ -275,19 +192,6 @@
             <div class=" justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 
                 <h1 class="h2">Customer details</h1>
-                <div class="row">
-
-                    <div class="col-6 pt-3">
-                        <form class="d-flex">
-                            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success" type="submit">Search</button>
-                        </form>
-                    </div>
-
-
-                </div>
-
-
                 <div class="table-responsive mt-5">
                     <table class="table table-bordered">
                         <thead>
@@ -310,9 +214,10 @@
                         <li>Example Attribute: <%= session.getAttribute("sessionuserid") %></li>
 
                     </ul>
-                    <form action="logout" method="get">
-                        <button type="submit">Logout</button>
-                    </form>
+<%--                    --%>
+<%--                    <form action="logout" method="get">--%>
+<%--                        <button type="submit">Logout</button>--%>
+<%--                    </form>--%>
                 </div>
             </div>
 

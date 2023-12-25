@@ -1,4 +1,4 @@
-package Servlets;
+package servlets;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
@@ -58,8 +58,9 @@ public class DisplayCartItemsPriceServlet extends HttpServlet {
             }
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
-            // Log the exception or handle it appropriately
-            response.sendError(HttpServletResponse.SC_INTERNAL_SERVER_ERROR, "Error fetching product data");
+            response.getWriter().println(
+                    "<script>alert('Your cart is empty!'); window.location.href = 'index.jsp';</script>");
+
         }
     }
 

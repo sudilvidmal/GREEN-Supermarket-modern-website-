@@ -253,6 +253,8 @@
                     sendRequestToServlet(orderData);
 
                     document.getElementById('checkoutForm').submit();
+
+                    sendEmail();
                     window.location.href = 'paymentsuccess.jsp';
                 });
             },
@@ -326,7 +328,11 @@
     };
 
 
-
+    function sendEmail() {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'SendEmail', true);
+        xhr.send();
+    }
 </script>
 
 

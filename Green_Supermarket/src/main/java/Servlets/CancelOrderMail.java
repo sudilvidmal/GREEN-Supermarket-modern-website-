@@ -1,4 +1,4 @@
-package Servlets;
+package servlets;
 
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
@@ -82,15 +82,24 @@ public class CancelOrderMail extends HttpServlet {
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 
             // Set Subject: header field
-            message.setSubject("Cancel Order");
+            message.setSubject("Order Cancellation Successful! (Green Supermarket)");
 
             // Now set the actual message
-            message.setText("You canceled your order bye");
+            message.setText("Dear sir/madam," +"\n" + "\n" +
+                    "We regret to inform you that your order has been canceled." +
+                    "If you have any concerns or require further assistance, please don't hesitate to contact our customer ." +
+                    "Thank you for contacting us!" +
+                    "\n" +   "\n" +
+                    "Best regards,\n" +
+
+                    "Green Supermarket | Customer Support: 0112-123456");
+
 
             // Send message
             Transport.send(message);
 
-            response.sendRedirect("checkout.jsp");
+            response.getWriter().println(
+                    "<script>alert('Your Order will be canceled! You will receive an email shortly!'); window.location.href = 'index.jsp';</script>");
 
         } catch (MessagingException mex) {
             mex.printStackTrace();

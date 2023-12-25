@@ -1,4 +1,4 @@
-package Servlets;
+package servlets;
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
@@ -66,10 +66,14 @@ public class SendEmail extends HttpServlet {
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 
             // Set Subject: header field
-            message.setSubject("Testing JavaMail");
+            message.setSubject("Your Order Confirmed! (Green Supermarket)");
 
             // Now set the actual message
-            message.setText("Hello, this is a test email from Java!");
+            message.setText("Dear sir/madam," +"\n"
+                    +"\n" +"We're pleased to confirm the successful receipt of your order. Our team is now processing it with care. Thank you for choosing us; we appreciate your business." +
+                    "\n" + "\n" +
+                    "Best regards,\n" +
+                    "Green Supermarket | Customer Support: 0112-123456");
 
             // Send message
             Transport.send(message);
