@@ -2,7 +2,6 @@ package servlets;
 
 import java.io.*;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
 import jakarta.servlet.http.*;

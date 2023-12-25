@@ -30,7 +30,7 @@ public class LogOutServlet extends HttpServlet {
 
             pre.executeUpdate();
             System.out.println("Table dropped successfully");
-            response.sendRedirect(request.getContextPath()+"/index.jsp");
+            response.getWriter().println("<script>alert('Logged Out'); window.location.href='index.jsp';</script>");
 
             conn.close();
 

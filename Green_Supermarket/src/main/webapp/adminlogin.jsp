@@ -110,12 +110,12 @@
         <h3 class="h3 mt-5 mb-3 fw-normal">Sign In</h3>
 
         <div class="form-floating mb-1">
-            <input type="email" class="form-control" id="adminmail" placeholder="name@example.com">
-            <label for="adminmail">Email address</label>
+            <input type="email" class="form-control" name="adminmail" placeholder="name@example.com">
+            <label>Email address</label>
         </div>
         <div class="form-floating mb-1">
-            <input type="password" class="form-control" id="adminpass" placeholder="Password">
-            <label for="adminpass">Password</label>
+            <input type="password" class="form-control" name="adminpass" placeholder="Password">
+            <label>Password</label>
         </div>
 
         <div class="form-check text-start my-3">
@@ -124,26 +124,13 @@
                 Remember me
             </label>
         </div>
-        <button class="btn btn-success w-100 py-2" id="btnlogin" type="submit" onclick="logadmin()">Sign in</button>
+
+        <button class="btn btn-success w-100 py-2" id="btnlogin" type="submit" >Sign in</button>
         <p class="mt-5 mb-3 text-body-secondary">&copy; lollipop</p>
     </form>
 </main>
 
-<script>
 
-    document.getElementById('btnlogin').addEventListener("click", function () {
-        logadmin();
-    }, false);
-
-    function logadmin() {
-        var admail = document.getElementById('adminmail').value;
-        var password = document.getElementById('adminpass').value;
-
-        if (admail == "admin" && password == "123") {
-            document.location.href = "sample.jsp";
-        }
-    }
-</script>
 <script src="dashboardassets/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

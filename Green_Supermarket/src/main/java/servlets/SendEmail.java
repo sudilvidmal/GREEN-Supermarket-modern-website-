@@ -1,4 +1,4 @@
-package Servlets;
+package servlets;
 import jakarta.mail.*;
 import jakarta.mail.internet.InternetAddress;
 import jakarta.mail.internet.MimeMessage;
@@ -7,6 +7,8 @@ import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
+
 import java.io.IOException;
 
 import java.util.Properties;
@@ -27,12 +29,13 @@ public class SendEmail extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-
+        HttpSession session = request.getSession();
+        String getmail = (String) session.getAttribute("sessionuseremail");
         // Sender's email address
         String from = "greensupermarket23@gmail.com";
 
         // Recipient's email address
-        String to = request.getParameter("mail"); //recivers password
+        String to = getmail; //recivers password
 
         // Sender's email password
         String password = "ndloocycmmbvewxf";
@@ -45,7 +48,7 @@ public class SendEmail extends HttpServlet {
         properties.put("mail.smtp.port", "587");
 
         // Get the Session object
-        Session session = Session.getInstance(properties, new jakarta.mail.Authenticator() {
+        Session session1 = Session.getInstance(properties, new jakarta.mail.Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
                 return new PasswordAuthentication(from, password);
@@ -54,7 +57,7 @@ public class SendEmail extends HttpServlet {
 
         try {
             // Create a default MimeMessage object
-            MimeMessage message = new MimeMessage(session);
+            MimeMessage message = new MimeMessage(session1);
 
             // Set From: header field of the header
             message.setFrom(new InternetAddress(from));
