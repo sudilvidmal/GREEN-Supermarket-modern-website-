@@ -31,9 +31,8 @@ CREATE TABLE `admin_table` (
   `admin_username` varchar(100) NOT NULL,
   `admin_email` varchar(100) NOT NULL,
   `admin_password` varchar(45) NOT NULL,
-  `admin_image` longblob NOT NULL,
   PRIMARY KEY (`admin_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,6 +41,7 @@ CREATE TABLE `admin_table` (
 
 LOCK TABLES `admin_table` WRITE;
 /*!40000 ALTER TABLE `admin_table` DISABLE KEYS */;
+INSERT INTO `admin_table` VALUES (1,'DemoAdmin','DemoAdmin','DemoAdmin','admin@greensp.com','admin'),(2,'Sudil ','Vidmal','sudil','sudilvidmal@gmail.com','sudil123'),(3,'Ayana','Sagara','sagara','sagara@gmail.com','sagara123'),(4,'Asiri','Hansaja','asiri','asiri@gmail.com','siri123');
 /*!40000 ALTER TABLE `admin_table` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -54,19 +54,17 @@ DROP TABLE IF EXISTS `billing_info_table`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `billing_info_table` (
   `payment_id` int NOT NULL AUTO_INCREMENT,
-  `order_id` int NOT NULL,
+  `customer_id` int NOT NULL,
   `first_name` varchar(255) NOT NULL,
   `last_name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `address` varchar(255) NOT NULL,
-  `address2` varchar(255) NOT NULL,
+  `address2` varchar(255) DEFAULT NULL,
   `state` varchar(255) NOT NULL,
   `zip` varchar(255) NOT NULL,
-  `cart_total` decimal(10,2) NOT NULL,
-  PRIMARY KEY (`payment_id`),
-  KEY `order_id_idx` (`order_id`),
-  CONSTRAINT `order_id` FOREIGN KEY (`order_id`) REFERENCES `order_table` (`order_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  `products` varchar(255) NOT NULL,
+  PRIMARY KEY (`payment_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -75,6 +73,7 @@ CREATE TABLE `billing_info_table` (
 
 LOCK TABLES `billing_info_table` WRITE;
 /*!40000 ALTER TABLE `billing_info_table` DISABLE KEYS */;
+INSERT INTO `billing_info_table` VALUES (1,1,'Neethila','Kumararatne','neethilakumararatne17@gmail.com','\"Namalee\", Galmulla, Meegahatenna.','','1','12130','1,6,4,2');
 /*!40000 ALTER TABLE `billing_info_table` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -86,18 +85,14 @@ DROP TABLE IF EXISTS `cart_table`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `cart_table` (
-  `cart_id` int NOT NULL AUTO_INCREMENT,
+  `item_id` int NOT NULL AUTO_INCREMENT,
   `product_id` int NOT NULL,
   `product_name` varchar(255) NOT NULL,
-  `product_quantity` int NOT NULL,
-  `product_image _path` varchar(255) NOT NULL,
+  `product_image_path` varchar(255) NOT NULL,
   `product_price` decimal(10,2) NOT NULL,
-  `cart_total` decimal(10,2) NOT NULL,
-  `cart_items` int DEFAULT NULL,
-  PRIMARY KEY (`cart_id`),
-  KEY `product_id_idx` (`product_id`),
-  CONSTRAINT `product_id` FOREIGN KEY (`product_id`) REFERENCES `product_table` (`product_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+  PRIMARY KEY (`item_id`),
+  KEY `product_id_idx` (`product_id`)
+) ENGINE=InnoDB AUTO_INCREMENT=201 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -106,6 +101,7 @@ CREATE TABLE `cart_table` (
 
 LOCK TABLES `cart_table` WRITE;
 /*!40000 ALTER TABLE `cart_table` DISABLE KEYS */;
+INSERT INTO `cart_table` VALUES (200,16,'Avocado','productimage\\product (2).jpeg',100.00);
 /*!40000 ALTER TABLE `cart_table` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -120,7 +116,7 @@ CREATE TABLE `category_table` (
   `category_id` int NOT NULL AUTO_INCREMENT,
   `category_name` varchar(100) NOT NULL,
   PRIMARY KEY (`category_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -129,6 +125,7 @@ CREATE TABLE `category_table` (
 
 LOCK TABLES `category_table` WRITE;
 /*!40000 ALTER TABLE `category_table` DISABLE KEYS */;
+INSERT INTO `category_table` VALUES (1,'Fruits'),(2,'Vegetables'),(3,'Beverages'),(4,'Frozen Food'),(5,'Grocery'),(6,'Fish & Meats'),(7,'Bakery Items'),(8,'Dairy Products'),(9,'Pharmacy');
 /*!40000 ALTER TABLE `category_table` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -146,7 +143,7 @@ CREATE TABLE `customer_table` (
   `customer_password` varchar(45) NOT NULL,
   `customer_phone` varchar(45) NOT NULL,
   PRIMARY KEY (`customer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -155,6 +152,7 @@ CREATE TABLE `customer_table` (
 
 LOCK TABLES `customer_table` WRITE;
 /*!40000 ALTER TABLE `customer_table` DISABLE KEYS */;
+INSERT INTO `customer_table` VALUES (1,'Neethila Kumararatne','neethilakumararatne17@gmail.com','knk123','0719386342'),(2,'Sunethra Karunaratne','sunethrakarunaratne1961@gmail.com','Sunethra123','0716400176'),(3,'Kerawala Nayana','nayana@gmail.com','ayana12356*','0725241234');
 /*!40000 ALTER TABLE `customer_table` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -171,7 +169,7 @@ CREATE TABLE `feedback_table` (
   `comment` varchar(200) NOT NULL,
   `rating` int NOT NULL,
   PRIMARY KEY (`feedback_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -180,36 +178,8 @@ CREATE TABLE `feedback_table` (
 
 LOCK TABLES `feedback_table` WRITE;
 /*!40000 ALTER TABLE `feedback_table` DISABLE KEYS */;
+INSERT INTO `feedback_table` VALUES (1,2,'Great experience and user friendly interface! Great work!',10),(2,1,'Easy to find items and nicely arranged!',9);
 /*!40000 ALTER TABLE `feedback_table` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `order_table`
---
-
-DROP TABLE IF EXISTS `order_table`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `order_table` (
-  `order_id` int NOT NULL AUTO_INCREMENT,
-  `customer_id` int NOT NULL,
-  `cart_id` int NOT NULL,
-  `cart_total` int NOT NULL,
-  PRIMARY KEY (`order_id`),
-  KEY `cart_id_idx` (`cart_id`),
-  KEY `customer_id` (`customer_id`),
-  CONSTRAINT `cart_id` FOREIGN KEY (`cart_id`) REFERENCES `cart_table` (`cart_id`),
-  CONSTRAINT `customer_id` FOREIGN KEY (`customer_id`) REFERENCES `customer_table` (`customer_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `order_table`
---
-
-LOCK TABLES `order_table` WRITE;
-/*!40000 ALTER TABLE `order_table` DISABLE KEYS */;
-/*!40000 ALTER TABLE `order_table` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -228,7 +198,7 @@ CREATE TABLE `product_table` (
   `product_image_path` varchar(255) NOT NULL,
   `product_stock` int NOT NULL,
   PRIMARY KEY (`product_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -237,7 +207,7 @@ CREATE TABLE `product_table` (
 
 LOCK TABLES `product_table` WRITE;
 /*!40000 ALTER TABLE `product_table` DISABLE KEYS */;
-INSERT INTO `product_table` VALUES (10,'bus','Vegetables','uyuyj',2000.00,'productimage\\half-of-an-avocado.jpg',0),(11,'bike','Vegetables','fgd',1000.00,'productimage\\yellow-bell-pepper-on-white.jpg',0),(12,'car','Vegetables','tyhdt',3000.00,'productimage\\half-of-an-avocado.jpg',0),(13,'mango','Fruits','good',1000.00,'productimage\\becky-mattson-7iLlgS5o09c-unsplash.jpg',0),(14,'mango','Fruits','fresh and cheap ',500.00,'productimage\\becky-mattson-7iLlgS5o09c-unsplash.jpg',0);
+INSERT INTO `product_table` VALUES (1,'Organic Avocado','Fruits','Creamy and nutritious, our ripe avocados are perfect for salads, spreads, or a healthy snack.',120.00,'productimage\\6.webp',10),(2,'Dark Chocolate Bars','Grocery','Indulge in rich, velvety dark chocolate—fair-trade sourced for guilt-free satisfaction with every heavenly bite.',200.00,'productimage\\8.webp',20),(3,'Whole Grain Bread','Bakery Items','Satisfy your cravings with our hearty whole-grain bread—crafted by artisans for the perfect slice every time.',160.00,'productimage\\1.webp',15),(4,'Organic Yogurt','Dairy Products','Indulge in the velvety texture and probiotic goodness of our organic Greek yogurt—perfect for breakfast or snacks.',250.00,'productimage\\7.webp',25),(5,'Olive Oil','Grocery','Elevate your cooking with our premium, cold-pressed olive oil—crafted for its rich flavor and health benefits.',450.00,'productimage\\2.webp',10),(6,'Vibrant Olives','Fruits','Savor the taste of the Mediterranean with our plump, brine-cured olives—perfect for salads or appetizers.',300.00,'productimage\\4.webp',12),(7,'Farm-Fresh Eggs','Grocery','Enjoy the rich, golden yolks of our free-range eggs—sourced from local farms committed to ethical practices.',300.00,'productimage\\5.webp',40),(8,'Coffee Beans','Grocery','Awaken your senses with our premium Arabica coffee beans—ethically sourced and expertly roasted for a rich, aromatic brew.',150.00,'productimage\\3.webp',20);
 /*!40000 ALTER TABLE `product_table` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -250,4 +220,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2023-12-20 13:36:35
+-- Dump completed on 2023-12-31 18:15:50
