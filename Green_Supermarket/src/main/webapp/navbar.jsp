@@ -39,7 +39,7 @@
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="aboutus.jsp">About Us</a>
+                    <a class="nav-link" href="contactus.jsp">Contact Us</a>
                 </li>
             </ul>
 
@@ -121,6 +121,5 @@
         }
 
 </script>
-
 </body>
 </html>

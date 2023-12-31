@@ -25,23 +25,23 @@ public class CancelOrderMail extends HttpServlet {
         HttpSession session1 = request.getSession();
         String getmail = (String) session1.getAttribute("sessionuseremail");
 
-        // Sender's email address
+
         String from = "greensupermarket23@gmail.com";
 
-        // Recipient's email address
-        String to = getmail; //receivers password
 
-        // Sender's email password
+        String to = getmail;
+
+
         String password = "ndloocycmmbvewxf";
 
-        // Setup mail server properties
+
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.host", "smtp.gmail.com");
         properties.put("mail.smtp.port", "587");
 
-        // Get the Session object
+
         Session session = Session.getInstance(properties, new Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
@@ -49,16 +49,16 @@ public class CancelOrderMail extends HttpServlet {
             }
         });
 
-        //Query to remove all cart items when clicking the cancel order button
+
 
 
         try (Connection conn = dbconnection.getConnection()) {
 
             String tableName = "" + session1.getId();
-            // SQL query to get cart items
+
             String cancelordersql = "TRUNCATE TABLE " + tableName;
 
-            //SQL query to retrieve the customer id of particular session
+
 
             PreparedStatement pre = conn.prepareStatement(cancelordersql);
 
@@ -72,19 +72,19 @@ public class CancelOrderMail extends HttpServlet {
         }
 
         try {
-            // Create a default MimeMessage object
+
             MimeMessage message = new MimeMessage(session);
 
-            // Set From: header field of the header
+
             message.setFrom(new InternetAddress(from));
 
-            // Set To: header field of the header
+
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 
-            // Set Subject: header field
+
             message.setSubject("Order Cancellation Successful! (Green Supermarket)");
 
-            // Now set the actual message
+
             message.setText("Dear sir/madam," +"\n" + "\n" +
                     "We regret to inform you that your order has been canceled." +
                     "If you have any concerns or require further assistance, please don't hesitate to contact our customer ." +

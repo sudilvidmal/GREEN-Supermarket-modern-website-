@@ -42,11 +42,7 @@ public class AddToCartServlet extends HttpServlet {
     }
 
     private Product getProductDetails(int productId) {
-        // Code to fetch product details from the database based on the product ID
-        // Implement your database connection and retrieval logic here
-        // Return a Product object with the details
 
-        // Sample code (replace with your actual logic):
         Connection connection = null;
         try {
             connection = dbconnection.getConnection();
@@ -56,7 +52,7 @@ public class AddToCartServlet extends HttpServlet {
                 statement.setInt(1, productId);
                 try (ResultSet resultSet = statement.executeQuery()) {
                     if (resultSet.next()) {
-                        // Populate a Product object with the retrieved details
+
                         return new Product(
                                 resultSet.getInt("product_id"),
                                 resultSet.getString("product_name"),
@@ -71,7 +67,7 @@ public class AddToCartServlet extends HttpServlet {
             }
         } catch (SQLException e) {
             e.printStackTrace();
-            // Handle the exception appropriately (log it, show an error page, etc.)
+
         } catch (ClassNotFoundException e) {
             throw new RuntimeException(e);
         } finally {
@@ -93,28 +89,29 @@ public class AddToCartServlet extends HttpServlet {
         try {
             connection = dbconnection.getConnection();
 
-            // Use the session ID for the table name
+
             String tableName = "" + session.getId();
 
-            // Check if the table exists, and create it if not
+
             if (!doesTableExist(connection, tableName)) {
                 createCartTable(connection, tableName);
             }
+            int custID = (int) session.getAttribute("sessionuserid");
 
-            // Assuming you have a Cart table with fields like productId, productName, price, quantity, etc.
-            String insertCartSql = "INSERT INTO " + tableName + " (product_id, product_name, " +
-                    "product_image_path, product_price) VALUES (?, ?, ?, ?)";
+            String insertCartSql = "INSERT INTO " + tableName + " (product_id, customer_id, product_name, " +
+                    "product_image_path, product_price) VALUES (?, ?, ?, ?, ?)";
 
             insertCartStatement = connection.prepareStatement(insertCartSql);
             insertCartStatement.setInt(1, product.getProductId());
-            insertCartStatement.setString(2, product.getProductName());
-            insertCartStatement.setString(3, product.getProductImagePath());
-            insertCartStatement.setDouble(4, product.getProductPrice());
+            insertCartStatement.setInt(2, custID);
+            insertCartStatement.setString(3, product.getProductName());
+            insertCartStatement.setString(4, product.getProductImagePath());
+            insertCartStatement.setDouble(5, product.getProductPrice());
             insertCartStatement.executeUpdate();
 
         } catch (SQLException | ClassNotFoundException e) {
             e.printStackTrace();
-            // Handle the exception appropriately (log it, show an error page, etc.)
+
         } finally {
             if (insertCartStatement != null) {
                 try {
@@ -134,8 +131,7 @@ public class AddToCartServlet extends HttpServlet {
     }
 
     private boolean doesTableExist(Connection connection, String tableName) throws SQLException {
-        // Check if the table exists in the database
-        // Return true if the table exists, false otherwise
+
 
         try (ResultSet resultSet = connection.getMetaData().getTables(null, null, tableName, null)) {
             return resultSet.next();
@@ -143,12 +139,12 @@ public class AddToCartServlet extends HttpServlet {
     }
 
     private void createCartTable(Connection connection, String tableName) throws SQLException {
-        // Create the Cart table dynamically based on the provided table name
-        // You can modify this SQL statement to match your table structure
+
 
         String createTableSql = "CREATE TABLE " + tableName + " ("
                 +"item_id INT NOT NULL AUTO_INCREMENT,"
                 + "product_id INT NOT NULL, "
+                + "customer_id INT NOT NULL, "
                 + "product_name VARCHAR(255) NOT NULL, "
                 + "product_image_path VARCHAR(255) NOT NULL, "
                 + "product_price DECIMAL(10,2) NOT NULL, "

@@ -14,7 +14,7 @@ public class AdminLogoutServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        // Invalidate the session
+
         HttpSession adminSession = request.getSession(false);
 
         try {
@@ -22,11 +22,11 @@ public class AdminLogoutServlet extends HttpServlet {
                 adminSession.invalidate();
             }
         } catch (IllegalStateException e) {
-            // Log or print the exception
+
             e.printStackTrace();
         }
 
-        // Redirect to adminlogin.jsp after logout
+
         response.sendRedirect("adminlogin.jsp");
     }
 }

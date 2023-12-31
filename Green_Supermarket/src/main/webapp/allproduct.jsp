@@ -51,7 +51,6 @@
             <div class="col-lg-9" style="padding-left: 30px;">
                 <div class="row">
                     <div class="col results-title">
-                        Showing all 9 results
                     </div>
 
                     <div class="col">

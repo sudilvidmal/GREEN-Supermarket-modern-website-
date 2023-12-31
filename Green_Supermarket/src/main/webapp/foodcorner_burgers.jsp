@@ -86,8 +86,7 @@
             <i class="fa-brands fa-rocketchat questions-icon"></i>
           </div>
           <div class="col-md-11 text">
-            Have a question about our products at E-Store? Feel free to contact our representatives via live
-            chat or email.
+            Have a question about our products at E-Store? Feel free to <a href="contactus.jsp" style="color:green;">contact us</a> anytime!
           </div>
         </div>
       </div>

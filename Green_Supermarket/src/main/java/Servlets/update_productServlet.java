@@ -35,7 +35,7 @@ public class update_productServlet extends HttpServlet {
             int pid = Integer.parseInt(request.getParameter("txtpid"));
 
 
-            String uploadDirectory = "D://website//Green_Supermarket//src//main//webapp//productimage";
+            String uploadDirectory = "D://Java Web//Green_Supermarket//src//main//webapp//productimage";
             String fileName = filePart.getSubmittedFileName();
             String relativeFilePath = "productimage" + File.separator + fileName;
             String filePath = uploadDirectory + File.separator + fileName;

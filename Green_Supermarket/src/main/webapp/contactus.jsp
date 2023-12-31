@@ -44,17 +44,16 @@
                 </li>
                 <li>
                     <i class="fas fa-paper-plane"></i>
-                    <span>Email:</span> <a href="mailto:info@yoursite.com">lollipop@gmail.com</a>
+                    <span>Email:</span> <a href="mailto:greensupermarket23@gmail.com">greensp@gmail.com</a>
                 </li>
                 <li>
                     <i class="fas fa-globe"></i>
-                    <span>Website:</span> <a href="#">lollipop.com</a>
+                    <span>Website:</span> <a href="#">Green Supermarket</a>
                 </li>
             </ul>
             <ul class="social-icons">
-                <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                <li><a href="#"><i class="fab fa-linkedin-in"></i></a></li>
+                <li><a href="https://www.facebook.com/green.super.market.nsbm"><i class="fab fa-facebook"></i></a></li>
+                <li><a href="https://www.instagram.com/green_super_market"><i class="fab fa-instagram"></i></a></li>
             </ul>
         </div>
         <div class="form-wrap">

@@ -57,7 +57,6 @@
                                                         <i class="fas fa-lock"></i>
                                                         <input type="password" name="upassword" placeholder="Enter your password" required>
                                                     </div>
-                                                    <div class="text"><a href="#">Forgot password?</a></div>
                                                     <div class="button input-box">
                                                         <input type="submit" value="Submit">
                                                     </div>
@@ -87,30 +86,8 @@
                                                         <input type="password" name="upassword" placeholder="Enter your password" required>
                                                     </div>
                                                     <div class="button input-box">
-                                                        <input type="submit" onclick="submitForm()">
+                                                        <input type="submit">
                                                     </div>
-                                                    <script>
-                                                        function submitForm() {
-                                                            $.ajax({
-                                                                url: '/signupservlet',
-                                                                type: 'POST',
-                                                                data: $('#signupform').serialize(),
-                                                                success: function (response) {
-                                                                    if (response === 'success') {
-                                                                        // Display an alert indicating successful registration
-                                                                        alert('SignUp Successful!');
-                                                                    } else if (response === 'error') {
-                                                                        // Handle the error case if needed
-                                                                        alert('SignUp failed. Please try again.');
-                                                                    }
-                                                                },
-                                                                error: function () {
-                                                                    // Handle the AJAX error case if needed
-                                                                    alert('Something went wrong. Please try again.');
-                                                                }
-                                                            });
-                                                        }
-                                                    </script>
                                                     <div class="text sign-up-text">Already have an account? <label for="flip">Login now</label></div>
                                                 </div>
                                             </form>

@@ -50,85 +50,65 @@
                         ${requestScope.product_name}
                     </div>
 
-
                     <div class="price-area my-4">
                         <p class="old-price mb-1">
-                            <del>Rs 220 /=</del>
-                            <span class="old-price-discount text-danger">(20% off)</span></p>
-                        <p class="new-price text-bold mb-1">Rs  ${requestScope.product_price}</p>
+                            <span class="old-price-discount text-danger">(5% off Store Wide)</span></p>
+                        <p class="new-price text-bold mb-1">Rs ${requestScope.product_price}</p>
                         <p class="text-secondary mb-1">(Additional tax may apply on checkout)</p>
                         <div class="instock">
                             <span>In Stock</span>
                         </div>
-
-
                     </div>
-
 
                     <div class="buttons d-flex my-5">
-
                         <div class="block">
-                            <button class="shadow btn custom-btn">Add to cart</button>
+                            <form action="AddToCartServlet" method="post">
+                                <input type="hidden" name="productId" value="${requestScope.product_id}">
+                                <button type="submit" class="shadow btn custom-btn">Add to Cart</button>
+                            </form>
                         </div>
+                    </div>
 
-                        <div class="block quantity">
-                            <input type="number" class="form-control" id="cart_quantity" value="1" min="0" max="5"
-                                   placeholder="Enter email" name="cart_quantity">
+                    <div class="product-details my-4">
+                        <p class="details-title text-color mb-1">Product Details</p>
+                        <p class="description"> ${requestScope.product_details} </p>
+                    </div>
+
+                    <div class="row questions bg-light p-3">
+                        <div class="col-md-1 icon">
+                            <i class="fa-brands fa-rocketchat questions-icon"></i>
                         </div>
-
+                        <div class="col-md-11 text">
+                            Have a question about our products at E-Store? Feel free to <a href="contactus.jsp"
+                                                                                           style="color:green;">contact
+                            us</a> anytime!
+                        </div>
                     </div>
 
-
-                </div>
-
-                <div class="product-details my-4">
-                    <p class="details-title text-color mb-1">Product Details</p>
-                    <p class="description"> ${requestScope.product_details} </p>
-                </div>
-
-                <div class="row questions bg-light p-3">
-                    <div class="col-md-1 icon">
-                        <i class="fa-brands fa-rocketchat questions-icon"></i>
+                    <div class="delivery my-4">
+                        <p class="font-weight-bold mb-0"><span><i class="fa-solid fa-truck"></i></span> <b>Delivery done
+                            in
+                            24 hours from time of purchase</b></p>
+                        <p class="text-secondary">Order now to get this product delivery</p>
                     </div>
-                    <div class="col-md-11 text">
-                        Have a question about our products at E-Store? Feel free to contact our representatives via live
-                        chat or email.
-                    </div>
-                </div>
 
-                <div class="delivery my-4">
-                    <p class="font-weight-bold mb-0"><span><i class="fa-solid fa-truck"></i></span> <b>Delivery done in
-                        3 hours from time of purchase</b></p>
-                    <p class="text-secondary">Order now to get this product delivery</p>
                 </div>
-                <div class="delivery-options my-4">
-                    <p class="font-weight-bold mb-0"><span><i class="fa-solid fa-filter"></i></span> <b>Delivery
-                        options</b></p>
-                    <p class="text-secondary">View delivery options here</p>
-                </div>
-
-
             </div>
-
-        </div>
-            </div>
-
         </div>
     </div>
+</div>
 
+<div class="container similar-products my-4">
+    <hr>
+    <p class="display-5">Similar Products</p>
 
-    <div class="container similar-products my-4">
-        <hr>
-        <p class="display-5">Similar Products</p>
+    <div class="row" id="display_similarproduct">
+        <%
 
-        <div class="row" id="display_similarproduct">
-            <%
+        %>
 
-            %>
-
-
-        </div>
     </div>
+</div>
 
 </div>
 <jsp:include page="feedback.jsp"/>
@@ -164,6 +144,7 @@
     window.onload = function () {
         fetchProductData();
     };
+
 
 </script>
 </body>
