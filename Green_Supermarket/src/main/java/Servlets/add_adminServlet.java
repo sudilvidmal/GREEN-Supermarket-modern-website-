@@ -26,10 +26,10 @@ public class add_adminServlet extends HttpServlet {
             String adminusername = request.getParameter("txtusername");
             String adminpassword = request.getParameter("txtpassword");
 
-            //Establishing connection
+
             Connection conn = dbconnection.getConnection();
 
-            //insert query
+
             String qry = "INSERT INTO admin_table(admin_first_name,admin_last_name,admin_username,admin_email,admin_password) VALUES(?,?,?,?,?)";
             PreparedStatement pre = conn.prepareStatement(qry);
 

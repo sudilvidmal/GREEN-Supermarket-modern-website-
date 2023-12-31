@@ -53,7 +53,7 @@
     </div>
 
     <div class="text-center pt-5 container">
-        <h1>Our <span style="color: #109E28; font-weight: 600;">top selling</span> products</h1>
+        <h1>Our <span style="color: #109E28; font-weight: 600;">featured</span> products</h1>
         <h5>Explore our special discounts and grab more discounts!</h5>
         <hr class="mx-auto" style="width: 50%;">
     </div>
@@ -69,7 +69,6 @@
                            %>
                         </div>
                     </div>
-
 
                     <div class="carousel-item" data-bs-interval="5000">
                         <div class="row" id="display_homeproductServlet2">

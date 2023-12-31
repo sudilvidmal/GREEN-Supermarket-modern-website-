@@ -36,7 +36,7 @@ public class add_productServlet extends HttpServlet {
             String fileName = filePart.getSubmittedFileName();
 
 
-            String uploadDirectory = "D://website//Green_Supermarket//src//main//webapp//productimage";
+            String uploadDirectory = "D://Java Web//Green_Supermarket//src//main//webapp//productimage";
             String relativeFilePath = "productimage" + File.separator + fileName;
             String filePath = uploadDirectory + File.separator + fileName;
 

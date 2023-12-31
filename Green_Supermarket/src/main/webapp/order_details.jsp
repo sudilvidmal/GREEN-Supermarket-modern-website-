@@ -14,7 +14,7 @@
     <script src="dashboardassets/js/color-modes.js"></script>
 
 
-    <title>Feedbacks</title>
+    <title>Order Details</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/dashboard/">
 
@@ -193,20 +193,25 @@
         <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
             <div class=" justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
 
-                <h1 class="h2">Customer Feedbacks</h1>
+                <h1 class="h2">Billing Information</h1>
 
                 <div class="table-responsive mt-5">
                     <table border="1" class="table table-hover table-bordered">
                         <thead>
                         <tr>
-                            <th>ID</th>
+                            <th>Payment ID</th>
                             <th>Customer ID</th>
-                            <th>Comment</th>
-                            <th>Rating</th>
-
+                            <th>Product IDs</th>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Address</th>
+                            <th>Address 2</th>
+                            <th>State</th>
+                            <th>Zip</th>
                         </tr>
                         </thead>
-                        <tbody id="display_feedback">
+                        <tbody id="display_Order_Details">
                         <%-- Data from Servlet will be displayed here --%>
                         <%
                             // Placeholder for data retrieved from Servlet
@@ -221,10 +226,10 @@
 </div>
 <script>
     function fetchData() {
-        fetch('FeedbackDisplayServlet')
+        fetch('DisplayCartTableServlet')
             .then(response => response.text())
             .then(data => {
-                document.getElementById('display_feedback').innerHTML = data;
+                document.getElementById('display_Order_Details').innerHTML = data;
             })
             .catch(error => {
                 console.error('Error:', error);

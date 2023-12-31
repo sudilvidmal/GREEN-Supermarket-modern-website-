@@ -8,7 +8,9 @@ import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
 
-@WebFilter({ "/customer.jsp", "/productduplicate.jsp", "/dashfeedback.jsp", "/sample.jsp" })
+@WebFilter({ "/customer.jsp", "/productduplicate.jsp", "/dashfeedback.jsp", "/sample.jsp" , "/order_details.jsp" ,
+        "/add_admin.jsp", "/add_category.jsp", "/add_product.jsp" , "/delete_admin.jsp" , "/delete_product.jsp",
+        "/update_admin.jsp", "/update_product.jsp" })
 public class AdminAccessFilter implements Filter {
 
     @Override

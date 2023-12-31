@@ -26,12 +26,12 @@ public class adminonly_loginServlet extends HttpServlet {
 
             ResultSet resultSett = pre.executeQuery();
 
-            // Check if there is a row in the result set
+
             if (resultSett.next()) {
-                // Admin login successful, create a session
+
                 HttpSession adminsession = request.getSession(true);
 
-                // Store relevant information in the session
+
 
                 adminsession.setAttribute("adminEmail", adminemail);
                 adminsession.setAttribute("adminpassword", adminpassword);
@@ -39,7 +39,7 @@ public class adminonly_loginServlet extends HttpServlet {
                 response.getWriter().println("<script>alert('Login Successful!'); window.location.href='sample.jsp';</script>");
                 System.out.println("Login Successful");
             } else {
-                // Invalid credentials
+
                 response.getWriter().println("<script>alert('Wrong Username or Password'); window.location.href='adminlogin.jsp';</script>");
                 System.out.println("Wrong Username or Password");
             }

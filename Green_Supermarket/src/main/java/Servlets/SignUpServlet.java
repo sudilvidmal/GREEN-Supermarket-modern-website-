@@ -25,7 +25,7 @@ public class SignUpServlet extends HttpServlet {
 
                 System.out.println("Connection Succeed!");
 
-                String Query = "insert into customer_table(customer_name,customer_phone,customer_email,customer_password) values(?,?,?,?)";
+                String Query = "insert into customer_table (customer_name,customer_phone,customer_email,customer_password) values(?,?,?,?)";
                 PreparedStatement pre = conn.prepareStatement(Query);
 
                 pre.setString(1, username);

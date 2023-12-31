@@ -39,13 +39,10 @@ public class display_productCardServlet extends HttpServlet {
 
                     out.println("<form action=\"AddToCartServlet\" method=\"post\">");
 
-
                     out.println("<input type=\"hidden\" name=\"productId\" value=\"" + rs.getInt("product_id") + "\">");
-
 
                     out.println("<a href=\"product_detailsservlet?productId=" + rs.getString("product_id") + "\">" +
                             "<img src=\"" + imageURL + "\" class=\"product-image\"></a>");
-
 
                     out.println("<h5 class=\"card-title\"><b>" + rs.getString("product_name") + "</b></h5>");
                     out.println("<p class=\"card-text small\">" + rs.getString("product_details") + "</p>");

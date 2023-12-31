@@ -17,37 +17,29 @@ import java.util.Properties;
 @WebServlet(name = "SendEmail", urlPatterns = {"/SendEmail"})
 public class SendEmail extends HttpServlet {
 
-    /**
-     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
-     * methods.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
         HttpSession session = request.getSession();
         String getmail = (String) session.getAttribute("sessionuseremail");
-        // Sender's email address
+
         String from = "greensupermarket23@gmail.com";
 
-        // Recipient's email address
-        String to = getmail; //recivers password
 
-        // Sender's email password
+        String to = getmail;
+
+
         String password = "ndloocycmmbvewxf";
 
-        // Setup mail server properties
+
         Properties properties = new Properties();
         properties.put("mail.smtp.auth", "true");
         properties.put("mail.smtp.starttls.enable", "true");
         properties.put("mail.smtp.host", "smtp.gmail.com");
         properties.put("mail.smtp.port", "587");
 
-        // Get the Session object
+
         Session session1 = Session.getInstance(properties, new jakarta.mail.Authenticator() {
             @Override
             protected PasswordAuthentication getPasswordAuthentication() {
@@ -56,26 +48,26 @@ public class SendEmail extends HttpServlet {
         });
 
         try {
-            // Create a default MimeMessage object
+
             MimeMessage message = new MimeMessage(session1);
 
-            // Set From: header field of the header
+
             message.setFrom(new InternetAddress(from));
 
-            // Set To: header field of the header
+
             message.addRecipient(Message.RecipientType.TO, new InternetAddress(to));
 
-            // Set Subject: header field
+
             message.setSubject("Your Order Confirmed! (Green Supermarket)");
 
-            // Now set the actual message
+
             message.setText("Dear sir/madam," +"\n"
                     +"\n" +"We're pleased to confirm the successful receipt of your order. Our team is now processing it with care. Thank you for choosing us; we appreciate your business." +
                     "\n" + "\n" +
                     "Best regards,\n" +
                     "Green Supermarket | Customer Support: 0112-123456");
 
-            // Send message
+
             Transport.send(message);
 
         } catch (MessagingException mex) {
@@ -85,40 +77,21 @@ public class SendEmail extends HttpServlet {
 
     }
 
-    // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
-    /**
-     * Handles the HTTP <code>GET</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Handles the HTTP <code>POST</code> method.
-     *
-     * @param request servlet request
-     * @param response servlet response
-     * @throws ServletException if a servlet-specific error occurs
-     * @throws IOException if an I/O error occurs
-     */
+
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
     }
 
-    /**
-     * Returns a short description of the servlet.
-     *
-     * @return a String containing servlet description
-     */
+
     @Override
     public String getServletInfo() {
         return "Short description";

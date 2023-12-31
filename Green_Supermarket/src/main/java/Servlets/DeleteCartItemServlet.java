@@ -20,14 +20,14 @@ public class DeleteCartItemServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        // Retrieve item_id from the request
+
         String cartIdString = request.getParameter("cartId");
 
         if (cartIdString != null && !cartIdString.isEmpty()) {
             try {
                 int cartId = Integer.parseInt(cartIdString);
 
-                // Perform the deletion in the database
+
                 HttpSession session = request.getSession();
                 deleteCartItem(session, cartId);
 
@@ -35,10 +35,9 @@ public class DeleteCartItemServlet extends HttpServlet {
                 RequestDispatcher dispatcher = request.getRequestDispatcher("/allproduct.jsp");
                 dispatcher.forward(request, response);
 
-                // Redirect back to the cart page or wherever you want
-//                response.sendRedirect(request.getContextPath() + "/allproduct.jsp");
+
             } catch (NumberFormatException e) {
-                e.printStackTrace(); // Log the exception or handle it according to your needs
+                e.printStackTrace();
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid cartId");
             }
         } else {
@@ -55,8 +54,8 @@ public class DeleteCartItemServlet extends HttpServlet {
                 deleteStmt.executeUpdate();
             }
         } catch (SQLException | ClassNotFoundException e) {
-            e.printStackTrace(); // Log the exception or handle it according to your needs
-            // You might want to throw a custom exception or handle the error in some way
+            e.printStackTrace();
+
         }
     }
 }
