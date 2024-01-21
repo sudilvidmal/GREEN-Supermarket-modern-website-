@@ -44,15 +44,15 @@
                     </li>
                 </ul>
                 <form action="CancelOrderMail" method="post" id="cancelOrderForm">
-                    <button type="submit" class="btn btn-success mt-2" id="btncancelorder">Cancel Order</button>
+                    <button type="submit" class="btn btn-light mt-2" id="btncancelorder">Cancel Order</button>
                 </form>
 
             </div>
 
             <div class="col-md-7 col-lg-8">
                 <h4 class="mb-3" style="color: #109E28;">Billing address</h4>
-
                 <form id="checkoutForm" action="CheckoutServlet" method="post">
+
 
                     <div class="row g-3">
                         <div class="col-sm-6">
@@ -102,7 +102,14 @@
                             <input type="text" class="form-control " name="cuszip" id="zip" placeholder="" required>
                         </div>
                     </div>
-<%--                <input type="submit">--%>
+
+                    <div class="justify-content-start d-flex d-inline-flex">
+
+                        <button type="submit" class="btn btn-success mt-2" id="btnconfirmorder">Confirm Order</button>
+
+
+
+                    </div>
 
                 </form>
 

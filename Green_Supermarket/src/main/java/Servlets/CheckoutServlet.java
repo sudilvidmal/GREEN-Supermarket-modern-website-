@@ -62,6 +62,8 @@ public class CheckoutServlet extends HttpServlet {
 
                     if (rowsAffected > 0) {
                         System.out.println("Billing info inserted!");
+                        response.sendRedirect("checkout.jsp");
+
                     } else {
                         System.out.println("Billing info insertion failed!");
                     }
