@@ -6,7 +6,7 @@ A complete full-stack e-commerce web application for a modern supermarket. Devel
 ## 🧰 Tech Stack
 
 - **Frontend:** JSP, HTML5, CSS3, Bootstrap 5
-- **Backend:** Java Servlets (MVC pattern)
+- **Backend:** Java Servlets 
 - **Database:** MySQL
 - **APIs & Integrations:**
   - [PayPal REST API](https://developer.paypal.com/docs/api/overview/) – Payment processing
